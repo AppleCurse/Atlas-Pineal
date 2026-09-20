@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer Brass Bezel Ring -->
+    <path
+        android:pathData="M54,54m-30,0a30,30 0 1,0 60,0a30,30 0 1,0 -60,0"
+        android:strokeWidth="3"
+        android:strokeColor="#C9B896" />
+    <path
+        android:pathData="M54,54m-26,0a26,26 0 1,0 52,0a26,26 0 1,0 -52,0"
+        android:strokeWidth="1.2"
+        android:strokeColor="#E5A93C" />
+
+    <!-- Pineal Almond Eye Outline -->
+    <path
+        android:pathData="M30,54 C38,40 70,40 78,54 C70,68 38,68 30,54 Z"
+        android:strokeWidth="2.5"
+        android:strokeColor="#F3E5AB">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="54"
+                android:startY="38"
+                android:endX="54"
+                android:endY="70"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#2A1B0E" />
+                <item android:offset="0.5" android:color="#140C07" />
+                <item android:offset="1.0" android:color="#2A1B0E" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Iris (Glowing Green/Gold Phosphor) -->
+    <path
+        android:pathData="M54,54m-12,0a12,12 0 1,0 24,0a12,12 0 1,0 -24,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="54"
+                android:startY="42"
+                android:endX="54"
+                android:endY="66"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#22C55E" />
+                <item android:offset="0.5" android:color="#15803D" />
+                <item android:offset="1.0" android:color="#0F5132" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Pupil -->
+    <path
+        android:pathData="M54,54m-5,0a5,5 0 1,0 10,0a5,5 0 1,0 -10,0"
+        android:fillColor="#040608"
+        android:strokeWidth="1"
+        android:strokeColor="#C9B896" />
+
+    <!-- Iris Highlight / Epifiz Sparkle -->
+    <path
+        android:pathData="M51.5,50m-2,0a2,2 0 1,0 4,0a2,2 0 1,0 -4,0"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Upper/Lower Eyelid Steampunk Rivets -->
+    <path
+        android:pathData="M54,36 L54,39 M42,39 L44,42 M66,39 L64,42 M54,72 L54,69 M42,69 L44,66 M66,69 L64,66"
+        android:strokeWidth="1.5"
+        android:strokeColor="#C9B896" />
+</vector>

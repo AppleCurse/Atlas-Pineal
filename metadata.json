@@ -1,0 +1,6 @@
+{
+  "name": "Atlas Epifiz",
+  "description": "Sivil Dijital İstihbarat ve Analiz Teşkilatı. KÜL (Yok Etme), SEDEF (Var Etme) ve İZ (Görme) protokolleriyle dijital varlık egemenliği konsolu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
