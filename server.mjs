@@ -1,16 +1,17 @@
-import http from 'http';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import http from 'node:http';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const PUBLIC_DIR = path.join(__dirname, 'public');
+const PUBLIC_DIR = path.resolve(__dirname, 'public');
+const PORT = Number(process.env.PORT || 3000);
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
-  '.js': 'application/javascript; charset=utf-8',
+  '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
@@ -23,135 +24,153 @@ const MIME_TYPES = {
   '.ttf': 'font/ttf'
 };
 
-// In-memory Teşkilat telemetry state
-let consoleState = {
-  awarenessLevel: 94.2,
-  coreIntegrity: 98.7,
-  zeroLogProtection: true,
-  isTimerActive: true,
-  timerSeconds: 1420,
-  kulIntensity: 0.85,
-  sedefTuning: 0.62,
-  izFocus: 0.91,
-  osintStatus: 'AKTİF',
-  lastScanTime: new Date().toLocaleTimeString('tr-TR')
+const SECURITY_HEADERS = {
+  'X-Content-Type-Options': 'nosniff',
+  'Referrer-Policy': 'no-referrer',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+  'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"
 };
 
 const server = http.createServer((req, res) => {
-  const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
-  const pathname = parsedUrl.pathname;
+  void handleRequest(req, res);
+});
 
-  // CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+async function handleRequest(req, res) {
+  for (const [name, value] of Object.entries(SECURITY_HEADERS)) {
+    res.setHeader(name, value);
+  }
 
-  if (req.method === 'OPTIONS') {
-    res.writeHead(204);
+  if (req.method !== 'GET' && req.method !== 'HEAD') {
+    res.setHeader('Allow', 'GET, HEAD');
+    sendText(res, 405, 'Method not allowed');
+    return;
+  }
+
+  let pathname;
+  try {
+    pathname = decodeURIComponent(new URL(req.url || '/', 'http://localhost').pathname);
+  } catch {
+    sendText(res, 400, 'Bad request');
+    return;
+  }
+
+  if (pathname.includes('\0')) {
+    sendText(res, 400, 'Bad request');
+    return;
+  }
+
+  const relativePath = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
+  const filePath = path.resolve(PUBLIC_DIR, relativePath);
+  const pathFromPublic = path.relative(PUBLIC_DIR, filePath);
+  if (pathFromPublic.startsWith('..') || path.isAbsolute(pathFromPublic)) {
+    sendText(res, 403, 'Forbidden');
+    return;
+  }
+
+  let stats;
+  try {
+    stats = await fs.promises.stat(filePath);
+  } catch {
+    sendText(res, 404, 'Not found');
+    return;
+  }
+
+  if (!stats.isFile()) {
+    sendText(res, 404, 'Not found');
+    return;
+  }
+
+  const extension = path.extname(filePath).toLowerCase();
+  const contentType = MIME_TYPES[extension] || 'application/octet-stream';
+  const rangeHeader = req.headers.range;
+  const range = rangeHeader ? parseByteRange(rangeHeader, stats.size) : null;
+
+  if (rangeHeader && !range) {
+    res.writeHead(416, {
+      ...SECURITY_HEADERS,
+      'Content-Range': `bytes */${stats.size}`,
+      'Accept-Ranges': 'bytes'
+    });
     res.end();
     return;
   }
 
-  // API Endpoints
-  if (pathname === '/api/status' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(consoleState));
-    return;
-  }
+  const cacheControl = extension === '.html' ? 'no-cache' : 'public, max-age=3600';
+  const headers = {
+    ...SECURITY_HEADERS,
+    'Content-Type': contentType,
+    'Accept-Ranges': 'bytes',
+    'Cache-Control': cacheControl
+  };
 
-  if (pathname === '/api/telemetry' && req.method === 'POST') {
-    let body = '';
-    req.on('data', chunk => { body += chunk; });
-    req.on('end', () => {
-      try {
-        const update = JSON.parse(body);
-        consoleState = { ...consoleState, ...update };
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: true, state: consoleState }));
-      } catch (err) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'Invalid JSON' }));
-      }
+  if (range) {
+    const contentLength = range.end - range.start + 1;
+    res.writeHead(206, {
+      ...headers,
+      'Content-Range': `bytes ${range.start}-${range.end}/${stats.size}`,
+      'Content-Length': contentLength
     });
-    return;
-  }
-
-  if (pathname === '/api/upload-video' && req.method === 'POST') {
-    const targetFile = path.join(PUBLIC_DIR, 'assets', 'atlas_epifiz_konsol.mp4');
-    const writeStream = fs.createWriteStream(targetFile);
-    req.pipe(writeStream);
-    writeStream.on('finish', () => {
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ success: true, message: 'Video başarıyla güncellendi' }));
-    });
-    writeStream.on('error', (err) => {
-      res.writeHead(500, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ error: err.message }));
-    });
-    return;
-  }
-
-  // Static File Serving with HTTP 206 Partial Content (Range) for Video
-  let filePath = path.join(PUBLIC_DIR, pathname === '/' ? 'index.html' : pathname);
-  
-  // Prevent directory traversal
-  if (!filePath.startsWith(PUBLIC_DIR)) {
-    res.writeHead(403);
-    res.end('Forbidden');
-    return;
-  }
-
-  fs.stat(filePath, (err, stats) => {
-    if (err || !stats.isFile()) {
-      // Fallback to index.html for SPA routes
-      filePath = path.join(PUBLIC_DIR, 'index.html');
-      fs.stat(filePath, (err2, stats2) => {
-        if (err2 || !stats2.isFile()) {
-          res.writeHead(404, { 'Content-Type': 'text/plain' });
-          res.end('404 Not Found');
-          return;
-        }
-        serveFile(req, res, filePath, stats2);
-      });
+    if (req.method === 'HEAD') {
+      res.end();
       return;
     }
-    serveFile(req, res, filePath, stats);
-  });
-});
-
-function serveFile(req, res, filePath, stats) {
-  const ext = path.extname(filePath).toLowerCase();
-  const contentType = MIME_TYPES[ext] || 'application/octet-stream';
-  const range = req.headers.range;
-
-  if (range && (ext === '.mp4' || ext === '.webm')) {
-    // Parse Range header: e.g. "bytes=0-1024"
-    const parts = range.replace(/bytes=/, "").split("-");
-    const start = parseInt(parts[0], 10);
-    const end = parts[1] ? parseInt(parts[1], 10) : stats.size - 1;
-    const chunksize = (end - start) + 1;
-    const stream = fs.createReadStream(filePath, { start, end });
-
-    res.writeHead(206, {
-      'Content-Range': `bytes ${start}-${end}/${stats.size}`,
-      'Accept-Ranges': 'bytes',
-      'Content-Length': chunksize,
-      'Content-Type': contentType,
-      'Cache-Control': 'no-cache'
-    });
-    stream.pipe(res);
-  } else {
-    res.writeHead(200, {
-      'Content-Length': stats.size,
-      'Content-Type': contentType,
-      'Accept-Ranges': 'bytes',
-      'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=3600'
-    });
-    fs.createReadStream(filePath).pipe(res);
+    pipeFile(filePath, { start: range.start, end: range.end }, res);
+    return;
   }
+
+  res.writeHead(200, { ...headers, 'Content-Length': stats.size });
+  if (req.method === 'HEAD') {
+    res.end();
+    return;
+  }
+  pipeFile(filePath, undefined, res);
 }
 
-const PORT = 3000;
+function parseByteRange(header, size) {
+  const match = /^bytes=(\d*)-(\d*)$/.exec(header);
+  if (!match || size <= 0) return null;
+
+  let start;
+  let end;
+  if (match[1] === '') {
+    const suffixLength = Number(match[2]);
+    if (!Number.isSafeInteger(suffixLength) || suffixLength <= 0) return null;
+    start = Math.max(size - suffixLength, 0);
+    end = size - 1;
+  } else {
+    start = Number(match[1]);
+    end = match[2] === '' ? size - 1 : Number(match[2]);
+    if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end)) return null;
+    if (start < 0 || start >= size || end < start) return null;
+    end = Math.min(end, size - 1);
+  }
+
+  return { start, end };
+}
+
+function pipeFile(filePath, options, res) {
+  const stream = fs.createReadStream(filePath, options);
+  stream.on('error', () => {
+    if (!res.headersSent) {
+      sendText(res, 500, 'Internal server error');
+    } else {
+      res.destroy();
+    }
+  });
+  stream.pipe(res);
+}
+
+function sendText(res, statusCode, message) {
+  const body = `${message}\n`;
+  res.writeHead(statusCode, {
+    ...SECURITY_HEADERS,
+    'Content-Type': 'text/plain; charset=utf-8',
+    'Content-Length': Buffer.byteLength(body),
+    'Cache-Control': 'no-store'
+  });
+  res.end(body);
+}
+
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`Atlas Epifiz Web Server running on port ${PORT}`);
+  console.log(`Atlas Pineal prototype ready on 0.0.0.0:${PORT}`);
 });

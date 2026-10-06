@@ -1,6 +1,6 @@
 {
-  "name": "Atlas Epifiz",
-  "description": "Sivil Dijital İstihbarat ve Analiz Teşkilatı. KÜL (Yok Etme), SEDEF (Var Etme) ve İZ (Görme) protokolleriyle dijital varlık egemenliği konsolu.",
+  "name": "Atlas Pineal",
+  "description": "Yetki kapsamı açık dijital maruziyet incelemesi için kamuya dönük arayüz. Operasyon motoru ayrı katmandadır; bu web yüzeyi tarama başlatmaz veya vaka verisi göndermez.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }
