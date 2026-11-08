@@ -1,0 +1,20 @@
+{
+  "name": "atlas-pineal",
+  "version": "1.0.0",
+  "description": "Atlas Pineal — Kamuya Açık Dijital Maruziyet Gözlemevi ve Anlatı Portalı",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  },
+  "keywords": [
+    "osint",
+    "exposure-intelligence",
+    "digital-footprint",
+    "privacy",
+    "pineal"
+  ],
+  "author": "AppleCurse",
+  "license": "Apache-2.0"
+}

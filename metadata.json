@@ -1,6 +1,7 @@
 {
   "name": "Atlas Pineal",
-  "description": "Yetki kapsamı açık dijital maruziyet incelemesi için kamuya dönük arayüz. Operasyon motoru ayrı katmandadır; bu web yüzeyi tarama başlatmaz veya vaka verisi göndermez.",
-  "requestFramePermissions": [],
-  "majorCapabilities": []
+  "version": "1.0.0",
+  "description": "Dijital Maruziyet ve İtibar Gözlem Portalı. Kanıta dayalı ayak izi haritalama, kaynaklı doğrulama ve yasal düzeltme protokolleri (İZ, KÜL, SEDEF).",
+  "repository": "https://github.com/AppleCurse/Atlas-Pineal",
+  "license": "Apache-2.0"
 }

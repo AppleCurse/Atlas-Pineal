@@ -1,43 +1,110 @@
-# Atlas Pineal
+# Atlas Pineal · Digital Exposure Intelligence
 
-**Ürün ilkesi:** Yetkili olunan dijital varlıklar için kanıta dayalı maruziyet incelemesi ve düzeltme süreçleri. Atlas Pineal, “gizli dünyayı bilen” ya da her şeyi silebilen bir teşkilat değildir. Gücü; kapsamı tanımlamak, kaynağı doğrulamak, belirsizliği göstermek ve haricî adımları yetkiye bağlamaktır.
+> **“Dijital dünya hafıza değil, kayıt sistemidir. Her tıklama kaydedilir. Atlas Pineal der ki: Siz yöneteceksiniz. Merkezde hiç kapanmayan Epifiz Gözü var.”**
 
-## Ürün sınırları
+Atlas Pineal; bireyler ve kurumlar için **kanıta dayalı dijital maruziyet haritalama, itibar doğrulaması ve yasal düzeltme süreçlerini** kamuya açıklayan resmî vitrin, anlatı ve gözlem portalıdır.
 
-- İnceleme yalnızca varlık sahibinin veya açık yetkiyle temsil edilen kurumun kapsamındadır.
-- OSINT, yasal ve herkese açık kaynakların dikkatle incelenmesidir; sızıntı verisi, özel hesap, izinsiz erişim ya da izinsiz kişi dosyası değildir.
-- Her bulgu kaynak, erişim zamanı, bağlam ve belirsizlik bilgisiyle taşınmalıdır. İsim benzerliği tek başına eşleşme sayılmaz.
-- KÜL, dış içeriği sihirli biçimde “yok etmez”; uygun olduğunda resmî düzeltme/kaldırma kanalına başvurmayı anlatır.
-- SEDEF, sahte kimlik veya arama manipülasyonu değil; kişinin/kurumun kontrol ettiği kanallarda doğru bilgi yayımlamaktır.
-- Talep gönderilmiş olması, içeriğin kaldırıldığı anlamına gelmez. Sonuç kaynağında doğrulanmalıdır.
-- Şifreleme, sıfır-log ve başarı oranı gibi güvenlik iddiaları yalnızca gerçek uygulama ve denetim kanıtıyla kullanılmalıdır.
+---
 
-## Bu checkout'taki katmanlar
+## 1. Atlas Pineal Nedir ve Ne İçin Vardır?
 
-Bu `Atlas-Pineal` deposu, **kamuya dönük anlatım yüzeyini** ve eski bir Android denemesini içerir. Buradaki web sunucusu yalnızca statik sayfaları sunar: tarama başlatmaz, form verisi toplamaz ve operasyon motoruna çağrı yapmaz.
+İnternet çağında bir insanın ya da kurumun dijital ayak izi; parçalanmış veritabanlarında, unutulmuş profillerde, yanıltıcı arama sonuçlarında ve doğrulanmamış kayıtlarda dağınık halde bulunur. Çoğu zaman bu kayıtlar eski, bağlamından koparılmış veya tamamen başka bir adaşa aittir.
 
-İşleyen **Pineal Epifiz operasyon motoru ayrı bir repo/çalışma katmanındadır**; bu checkout'a gömülü değildir. Motorun iç mimarisi, yetenekleri ve testleri kendi kod tabanında değerlendirilir. Bu web sunucusu motoru çağırmaz ve motorun yerini tutmaz.
+**Atlas Pineal bu kaosu üç aşamalı bir disiplinle çözer:**
+1. **Görünür Kılar:** İnternette sizin hakkınızda ne göründüğünü kaynak ve zaman damgasıyla ortaya çıkarır.
+2. **Doğrular:** İsim benzerliği, dedikodu veya asılsız iddiaları eler; yalnızca kanıtlanabilir açık kaynak verisini (OSINT) dikkate alır.
+3. **Harekete Geçirir:** Yanlış veya zararlı kayıtların resmî, yasal ve kurumsal yollarla düzeltilmesi/kaldırılması için rehberlik eder.
 
-### Web yüzeyini çalıştırma
+---
 
-```sh
-node server.mjs
+## 2. Pineal Ekosistemindeki Konumu (Mimari Ayrım)
+
+Atlas Pineal, bağımsız ama birbiriyle konuşan üç ayaklı Pineal altyapısının **kamusal vitrin ve anlatı katmanıdır**:
+
+```mermaid
+flowchart TD
+    subgraph PORTAL["1. ATLAS PINEAL (Bu Depo)"]
+        A1["Kamusal Web Gözlemevi"]
+        A2["Metodoloji & Protokol Anlatısı"]
+        A3["Sıfır Bağımlılıklı Güvenli Web Sunucusu"]
+    end
+
+    subgraph ENGINE["2. PINEAL EPIFIZ (Merkezi Operasyon Motoru)"]
+        E1["12 Bilişsel Analiz Ajanı"]
+        E2["Yaşam Kırılması & Kanıt Grafı"]
+        E3["OSINT & Adli Medya Analiz Çekirdeği"]
+    end
+
+    subgraph MOBILE["3. PINEAL ANDROID COMPANION (Saha Terminali)"]
+        M1["Mobil Jetpack Compose Arayüzü"]
+        M2["Çevrimdışı Room DB & Telemetri"]
+        M3["Saha İçi Hedef Girişi & Aspasia Diyaloğu"]
+    end
+
+    PORTAL -.->|"Metodolojik Çerçeve"| ENGINE
+    MOBILE <==>|"Mobil API Köprüsü"| ENGINE
 ```
 
-Ardından `http://localhost:3000` adresini açın. Frontend dış font, analitik veya tarama servisi çağırmaz. Sunucu `public/` dosyalarını `GET`/`HEAD` ile sunar; form, telemetri veya video-yükleme API'si yoktur. Güvenlik başlıkları, Content Security Policy, güvenli dosya yolu kontrolü ve medya için byte-range desteği uygulanır.
+* **Atlas-Pineal (Bu Depo):** Ürünün felsefesini, sınırlarını ve protokollerini anlatan; tarama başlatmayan, veri toplamayan, tamamen güvenli statik gözlem portalıdır.
+* **[pineal-epifiz](https://github.com/AppleCurse/pineal-epifiz):** Tüm ağır taramaların, 12 uzman ajanın, psikolojik profillemenin, görsel adli analizin ve kanıt zincirinin çalıştığı asıl operasyonel motordur.
+* **[pineal-android-companion](https://github.com/AppleCurse/pineal-android-companion):** Saha operatörünün cebinde taşıdığı Android istemcisidir.
 
-## Pineal Core / Pineal Heretic
+---
 
-Pineal Core, ayrı motor katmanındaki yeteneklerin ortak omurga ve erişim kapılarıyla çalışmasını ifade eder. Dil tespiti gibi deterministik ölçümlerde sinyal ve güven düzeyi; çeviri gibi işlerde ise yerel motor koşulu açıkça belirtilmelidir. Belirsiz sonuç etiket uydurarak kapatılmamalıdır.
+## 3. Üç Temel Protokol: İZ · KÜL · SEDEF
 
-Pineal Heretic, güçlü iddiaları karşı kanıtla sınama ve yanlış eşleşmeleri arama disiplinini temsil eder. Bu ad, doğaüstü bir yetenek iddiası değildir. Heretic yaklaşımının operasyonel olarak etkin olduğu ancak ilgili motor kodu ve testleriyle ayrıca doğrulanabilir.
+Atlas Pineal'in operasyonel yaklaşımı 3 katı protokolle tarif edilir:
 
-## Pilot ve yayına çıkış öncesi kanıtlar
+### 🔍 PROTOKOL 01: İZ (Map & Verify)
+* **Kendi dijital izinizi görün:** Arama motorları, kamusal kayıtlar, resmî siciller ve sosyal platformlardaki veriler URL ve erişim tarihiyle haritalandırılır.
+* **Sınır:** Yalnızca açık kaynak ve yetkili alanlar incelenir. İsim benzerliği tek başına eşleşme sayılmaz; bağlam ve bağımsız teyit aranır.
 
-Tasarım tek başına güven oluşturmaz. Hizmet kapsamı ve yetki akışı, tüzel kişi ve erişilebilir iletişim, KVKK/GDPR bilgilendirmesi, veri saklama/silme süreleri, kullanılan kaynakların izin/kullanım koşulları, kaynak ve tarih içeren örnek raporlar, güvenlik mimarisi ve bağımsız test sonuçları hazırlanmalıdır. Bunlar doğrulanmadan “üst düzey istihbarat”, “şifreli/sıfır log” veya başarı garantisi yayımlanmamalıdır.
+### 🔥 PROTOKOL 02: KÜL (Correct & Request Removal)
+* **Kaynağında düzeltme isteyin:** Hatalı, yanıltıcı veya süresi dolmuş veriler sihirli bir biçimde "yok edilmez"; hukuki ve resmî kanallardan (KVKK/GDPR, arama motoru kaldırma talepleri, içerik sağlayıcı bildirimleri) talep süreci başlatılır.
+* **Sınır:** Talep gönderilmiş olması içeriğin silindiği anlamına gelmez; sonuç bizzat kaynağında doğrulanmadan "temizlendi" denmez.
 
-## Bu depodaki Android denemesi
+### 🛡️ PROTOKOL 03: SEDEF (Fortify & Rebuild)
+* **Doğru bilgiyi kalıcı kılın:** Sahte kimlik veya manipülasyon değil; bireyin/kurumun kendi kontrolündeki resmî kanallarda doğru ve eksiksiz bilgiyi inşa ederek gelecekteki itibar saldırılarına karşı doğal bir kalkan oluşturmasıdır.
 
-`app/` altındaki Jetpack Compose uygulaması, ayrı Pineal Epifiz operasyon motoruyla karıştırılmamalıdır. Mevcut Android kaynaklarında eski veri-zehirleme/üçüncü-kişi araştırması metinleri, doğrulanmamış AES/sıfır-log ifadeleri ve istemciden doğrudan Gemini çağrısı gibi yayımlama öncesi yeniden ele alınması gereken izler bulunur. Bu Android denemesi güvenlik/gizlilik incelemesinden geçirilmeden yayımlanmamalıdır; üretim API anahtarı APK içine konmamalıdır.
+---
 
-`.env.example` içindeki anahtar yalnızca Android denemesi için yer tutucudur. Gerçek kullanım, açık bilgilendirme/onay, veri saklama politikası ve güvenli sunucu tarafı anahtar yönetimi gerektirir.
+## 4. Epistemik Dürüstlük İlkeleri
+
+* **Varsayıma Yer Yok:** Her bulgu kaynak URL, zaman damgası ve doğruluk güven düzeyiyle etiketlenir.
+* **Fail-Closed Güvenlik:** Bir bilginin kaynağı doğrulanamıyorsa "temiz" veya "kesin" denmez; belirsizlik şeffafça raporda kalır.
+* **Önce İzin, Sonra Analiz:** Gizli hesaplar, sızıntı veritabanları veya izinsiz takip araçları sistemin felsefesiyle bağdaşmaz.
+
+---
+
+## 5. Kurulum ve Çalıştırma
+
+Atlas Pineal web yüzeyi sıfır dış bağımlılıkla (harici NPM paketine veya üçüncü taraf kütüphaneye ihtiyaç duymadan) çalışacak şekilde tasarlanmıştır.
+
+### Node.js ile Çalıştırma:
+```bash
+# Depoyu klonlayın
+git clone https://github.com/AppleCurse/Atlas-Pineal.git
+cd Atlas-Pineal
+
+# Sunucuyu başlatın (port varsayılan: 3000)
+npm start
+# veya doğrudan:
+node server.mjs
+```
+Tarayıcınızda `http://localhost:3000` adresine gidin.
+
+### Docker ile Çalıştırma:
+```bash
+docker compose up -d
+```
+
+### Güvenlik Başlıkları:
+Yerleşik `server.mjs` sunucusu şu sıkı güvenlik standartlarıyla donatılmıştır:
+* **Content Security Policy (CSP):** `default-src 'self'`, sıfır dış betik/font izni.
+* **Byte-Range Desteği:** Tanıtım ve konsol videoları için HTTP 206 kısmi akış desteği.
+* **Dizin Atlama Koruması:** `path.resolve` ve null byte denetimleriyle güvenli dosya sunumu.
+
+---
+
+## 6. Lisans
+Bu proje [Apache 2.0](LICENSE) lisansı altında korunmaktadır.
