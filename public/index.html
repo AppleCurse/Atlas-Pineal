@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1421">
-  <meta name="description" content="Atlas Pineal, yetkili olduğunuz dijital varlıklar için kanıta dayalı maruziyet haritalama ve düzeltme süreçleri üzerine geliştirilen bir ürün prototipidir.">
+  <meta name="description" content="Atlas Pineal — Kişiler ve kurumlar için kanıta dayalı hedef istihbaratı, dijital maruziyet radarı, dijital iz silme (KÜL) ve yeni kimlik inşası (SEDEF) portalı.">
   <title>Atlas Pineal — Digital Exposure Intelligence</title>
   <link rel="stylesheet" href="/styles.css">
   <script src="/app.js" defer></script>
@@ -15,10 +15,10 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Atlas Pineal ana sayfa">
-        <span class="brand-mark" aria-hidden="true"><span>A</span><i></i></span>
+        <span class="brand-mark" aria-hidden="true"><span>👁</span><i></i></span>
         <span class="brand-copy">
           <span class="brand-name">ATLAS <b>PINEAL</b></span>
-          <span class="brand-caption">DIGITAL EXPOSURE INTELLIGENCE</span>
+          <span class="brand-caption">PINEAL OBSERVATORY // ÖZEL DİJİTAL İSTİHBARAT</span>
         </span>
       </a>
 
@@ -28,12 +28,12 @@
       </button>
 
       <nav class="primary-nav" id="primary-nav" aria-label="Ana gezinme">
-        <a href="#methodology">Metodoloji</a>
-        <a href="#protocols">Protokoller</a>
-        <a href="#scope">Yetki ve etik</a>
+        <a href="#services">Hizmetlerimiz</a>
+        <a href="#protocols">Üç Protokol (İZ · KÜL · SEDEF)</a>
+        <a href="#scope">Hizmet Alanı</a>
         <a href="#pineal-core">Pineal Core</a>
-        <a href="#status">Ürün durumu</a>
-        <a class="button button-small button-dark" href="#methodology">Nasıl çalışır? <span aria-hidden="true">↘</span></a>
+        <a href="#faq">Sık Sorulanlar</a>
+        <a class="button button-small button-dark" href="#services">Hizmet Al <span aria-hidden="true">↘</span></a>
       </nav>
     </div>
   </header>
@@ -43,235 +43,213 @@
       <div class="hero-grid-pattern" aria-hidden="true"></div>
       <div class="container hero-layout">
         <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> DIGITAL EXPOSURE INTELLIGENCE <span class="eyebrow-divider">/</span> 001</div>
-          <p class="hero-status"><span class="status-dot" aria-hidden="true"></span> PUBLIC ARAYÜZ · OPERASYON MOTORU AYRI KATMANDA</p>
-          <h1 id="hero-title">Dijital riskleri <span>görünür</span> kılın.<br>Her adımı <em>kanıtlayın.</em></h1>
-          <p class="hero-lede">İnternette sizin hakkınızda ne görünüyor? Bilgi doğru mu, eski mi, size mi ait? Atlas Pineal bu sorulara kaynak göstererek yanıt vermek; yanlış kayıtlar için doğru düzeltme yolunu bulmanıza yardımcı olmak üzere tasarlanmıştır. Her adımda kapsam ve karar sizde kalır.</p>
+          <div class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> ATLAS EPİFİZ // GÖZLEMEVİ <span class="eyebrow-divider">/</span> v3.0</div>
+          <p class="hero-status"><span class="status-dot" aria-hidden="true"></span> ÖZEL DİJİTAL İSTİHBARAT & İTİBAR PORTALI</p>
+          <h1 id="hero-title">Dijital dünya hafıza değil,<br><span>kayıt sistemidir.</span></h1>
+          <p class="hero-lede">Her tıklama kaydedilir. <strong>Atlas Pineal</strong> der ki: <em>Kayıtları siz yöneteceksiniz.</em> Merkezde hiç kapanmayan <strong>Epifiz Gözü</strong> var. Bir hesabı çözmek, bir şahsın geçmiş riskini görmek, internetteki bütün varlığını silmek ya da sıfırdan yeni ve lekesiz bir kişilik inşa etmek isteyenler için arka planda devasa <a href="https://github.com/AppleCurse/pineal-epifiz" target="_blank" rel="noopener">Pineal Epifiz</a> motoru çalışır.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#methodology">Nasıl çalıştığını gör <span aria-hidden="true">↓</span></a>
-            <a class="text-link" href="#scope">Bu hizmet bana uygun mu? <span aria-hidden="true">→</span></a>
+            <a class="button button-primary" href="#services">Hizmetlerimizi İnceleyin <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#protocols">Üç Protokol (İZ · KÜL · SEDEF) <span aria-hidden="true">→</span></a>
             <button class="button button-listen" id="listen-overview" type="button" aria-pressed="false">
-              <span class="listen-icon" aria-hidden="true">▶</span><span id="listen-label">Kısa özeti dinle</span>
+              <span class="listen-icon" aria-hidden="true">▶</span><span id="listen-label">Manifestoyu Dinle</span>
             </button>
           </div>
-          <p class="audio-note">Bu sayfa mikrofonu açmaz ve ses kaydetmez. Dinleme, cihazınızın konuşma özelliğini kullanır; sesin yerel mi yoksa sistem sağlayıcısıyla mı üretildiği cihaz ayarlarına bağlıdır.</p>
+          <p class="audio-note">Sesli özet, cihazınızın yerleşik sentezleyicisini kullanır; ses kaydı alınmaz.</p>
           <p class="audio-status" id="speech-status" role="status" aria-live="polite"></p>
           <div class="scope-notice">
-            <div class="scope-icon" aria-hidden="true">S</div>
-            <p><strong>Önce izin.</strong> Yalnızca size ait veya yazılı olarak yetkilendirildiğiniz alanlar. Özel hesaplara girilmez; aileden, komşudan ya da köyden dedikodu toplanmaz.</p>
+            <div class="scope-icon" aria-hidden="true">👁</div>
+            <p><strong>Merkezdeki Göz:</strong> Kaynak · Korelasyon · Analiz · Doğrulama · Bağlam. Açık kaynaklar matematiksel olarak ölçülür, her iddianın arkasına kanıt mühürlenir.</p>
           </div>
         </div>
 
         <section class="pipeline-panel" aria-labelledby="pipeline-title">
           <div class="pipeline-header">
-            <div><p class="panel-kicker">BİR TALEP NASIL İŞLENİR?</p><h2 id="pipeline-title">Önce soruyu anlarız.</h2></div>
-            <span class="spec-badge">AYRI MOTOR KATMANI<br><b>YETKİ KONTROLLÜ</b></span>
+            <div><p class="panel-kicker">4 TEMEL HİZMET KAPISI</p><h2 id="pipeline-title">Neye İhtiyacınız Var?</h2></div>
+            <span class="spec-badge">12 SAHA AJANI<br><b>7 DALGA MOTORU</b></span>
           </div>
           <ol class="pipeline-list">
-            <li><span class="pipeline-number">01</span><div><h3>Kimin için, hangi izinle?</h3><p>Önce sahiplik ve amaç netleştirilir.</p></div><span class="pipeline-tag">İZİN</span></li>
-            <li><span class="pipeline-number">02</span><div><h3>Kayıt nerede görünüyor?</h3><p>Kaynağı ve görüldüğü tarihi not ederiz.</p></div><span class="pipeline-tag">KAYNAK</span></li>
-            <li><span class="pipeline-number">03</span><div><h3>Bilgi doğru ve güncel mi?</h3><p>Benzer isim, tek başına eşleşme sayılmaz.</p></div><span class="pipeline-tag">KONTROL</span></li>
-            <li><span class="pipeline-number">04</span><div><h3>Ne yapılacağına siz karar verin.</h3><p>Resmî düzeltme yolu için onayınız gerekir.</p></div><span class="pipeline-tag">ONAY</span></li>
-            <li><span class="pipeline-number">05</span><div><h3>Sonuç gerçekten değişti mi?</h3><p>İşlem, yayımlandığı yerde yeniden kontrol edilir.</p></div><span class="pipeline-tag">TEYİT</span></li>
+            <li><span class="pipeline-number">01</span><div><h3>Bir Hesabı / Şahsı Araştırmak</h3><p>360° açık kaynak istihbaratı ve ilk temas stratejisi.</p></div><span class="pipeline-tag">İSTİHBARAT</span></li>
+            <li><span class="pipeline-number">02</span><div><h3>Kiminle Masadasınız? (Risk Radarı)</h3><p>Ortaklık, evlilik, iş öncesi bot ve gerçeklik testi.</p></div><span class="pipeline-tag">RADAR</span></li>
+            <li><span class="pipeline-number">03</span><div><h3>Varlığınızı İnternetten Silmek</h3><p>PROTOKOL 02: KÜL ile kayıtları kaynağında söndürme.</p></div><span class="pipeline-tag">KÜL</span></li>
+            <li><span class="pipeline-number">04</span><div><h3>Yeni Bir Kişilik & İtibar İnşası</h3><p>PROTOKOL 03: SEDEF ile lekesiz yeni dijital kimlik zırhı.</p></div><span class="pipeline-tag">SEDEF</span></li>
           </ol>
-          <div class="pipeline-footer"><span class="status-dot status-dot-muted" aria-hidden="true"></span> Bu web yüzeyi tarama başlatmaz; operasyon ayrı motor katmanında yürür.</div>
+          <div class="pipeline-footer"><span class="status-dot status-dot-teal" aria-hidden="true"></span> Arka planda 12 uzman ajan, görsel adli analiz ve kriptografik kanıt zinciri devrede.</div>
         </section>
       </div>
 
       <div class="container hero-bottom">
-        <span>ÖNCE KAPSAM <b>·</b> SONRA KAYNAK <b>·</b> EN SON KARAR</span>
-        <a href="#methodology">ÇALIŞMA MODELİ <span aria-hidden="true">↓</span></a>
+        <span>KAYNAK <b>·</b> KORELASYON <b>·</b> ANALİZ <b>·</b> DOĞRULAMA <b>·</b> BAĞLAM</span>
+        <a href="#services">DÖRT HİZMET ALANI <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
-    <section class="statement-strip" aria-label="Atlas Pineal çalışma ilkesi">
-      <div class="container statement-inner">
-        <p>Bir arama sonucu, bir insanın bütün hikâyesi değildir.<br><strong>Önce kaynağa bak. Bilgiyi doğrula. Sonra karar ver.</strong></p>
-        <span class="statement-index">ÖNCE İNSAN · SONRA KANIT <i aria-hidden="true"></i></span>
-      </div>
-    </section>
-
-    <section class="identity-section" aria-labelledby="identity-title">
-      <div class="container identity-layout">
-        <div class="identity-copy">
-          <div class="section-kicker"><span>WHY THE NAME</span> / ATLAS PINEAL</div>
-          <h2 id="identity-title">Harita çıkar.<br><span>Bağlamı doğrula.</span></h2>
-        </div>
-        <div class="identity-details">
-          <div><span>ATLAS / MAP</span><p>Dağınık dijital kayıtları kaynaklarıyla aynı haritada göster.</p></div>
-          <div><span>PINEAL / CONTEXT</span><p>İşaretleri bağlam, zaman ve kanıtla birlikte değerlendir.</p></div>
-          <p class="identity-boundary"><b>“Üçüncü göz” bir metafordur.</b> Doğaüstü erişim değil; farklı kaynakları karşılaştırıp kanıtlanmayanı iddia etmemek.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section methodology-section" id="methodology" aria-labelledby="methodology-title">
+    <!-- 4 Hizmet Alanı Detayı -->
+    <section class="section services-section" id="services" aria-labelledby="services-title">
       <div class="container">
         <div class="section-heading section-heading-row">
           <div>
-            <div class="section-kicker"><span>01</span> / İNCELEME METODOLOJİSİ</div>
-            <h2 id="methodology-title">Gizli puan yok.<br><span>İzlenebilir kanıt zinciri.</span></h2>
+            <div class="section-kicker"><span>01</span> / ÖZEL HİZMET KAPILARI</div>
+            <h2 id="services-title">İnternetteki Kaosu<br><span>Dört Disiplinle Yönetiyoruz.</span></h2>
           </div>
-          <p>Güven, iddialı sıfatlarla değil; her bulgunun nereden geldiğini, nasıl doğrulandığını ve ne zaman kapandığını göstermekle kurulur.</p>
+          <p>Bizden özel hizmet alabilirsiniz. Bir hedefi çözmek, kiminle karşı karşıya olduğunuzu bilmek, geçmişi tamamen silmek veya sıfırdan yeni bir kişilik inşa etmek.</p>
         </div>
 
         <ol class="method-grid">
-          <li class="method-card"><span class="method-number">01</span><div class="method-icon icon-scope" aria-hidden="true">⌖</div><h3>Kapsamı sabitle</h3><p>Varlığın sahibi, temsil yetkisi, amaç ve dışarıda bırakılacak alanlar yazılı olarak belirlenir.</p><span class="method-output">ÇIKTI · ONAYLI KAPSAM</span></li>
-          <li class="method-card"><span class="method-number">02</span><div class="method-icon icon-source" aria-hidden="true">↗</div><h3>Kaynağı kaydet</h3><p>Yalnızca izinli, herkese açık kaynaklar. Her kayıt URL, erişim zamanı ve kaynak türüyle ilişkilendirilir.</p><span class="method-output">ÇIKTI · KAYNAK KÜNYESİ</span></li>
-          <li class="method-card"><span class="method-number">03</span><div class="method-icon icon-verify" aria-hidden="true">✓</div><h3>Eşleşmeyi doğrula</h3><p>İsim benzerliği tek başına kanıt sayılmaz. Bağlam, güncellik ve bağımsız doğrulama kontrol edilir.</p><span class="method-output">ÇIKTI · GÜVEN DÜZEYİ</span></li>
-          <li class="method-card"><span class="method-number">04</span><div class="method-icon icon-action" aria-hidden="true">→</div><h3>Yetkili adımı seç</h3><p>Yanlış kayıt için resmî düzeltme/kaldırma kanalı önerilir. Haricî işlem kullanıcı onayı olmadan yapılmaz.</p><span class="method-output">ÇIKTI · ONAYLI EYLEM</span></li>
-          <li class="method-card"><span class="method-number">05</span><div class="method-icon icon-check" aria-hidden="true">≡</div><h3>Sonucu teyit et</h3><p>Talep gönderildi demek kaldırıldı demek değildir. Durum ve kanıt, kaynağın kendisinde yeniden kontrol edilir.</p><span class="method-output">ÇIKTI · DOĞRULANMIŞ DURUM</span></li>
+          <li class="method-card">
+            <span class="method-number">01</span>
+            <div class="method-icon icon-scope" aria-hidden="true">⌖</div>
+            <h3>Hedef ve Hesap İstihbaratı</h3>
+            <p>Bir hesabı veya şahsı 360° açık kaynaklardan (OSINT) çözün. Gerçek kimlik, gizlenen ilgi alanları, zafiyetler, hassasiyet noktaları ve muhatabın savunmasını düşüren 3 hamleli ilk temas köprüsü.</p>
+            <span class="method-output">HİZMET · HEDEF İSTİHBARATI</span>
+          </li>
+          <li class="method-card">
+            <span class="method-number">02</span>
+            <div class="method-icon icon-source" aria-hidden="true">🛡</div>
+            <h3>Adli Güvenilirlik & Risk Radarı</h3>
+            <p>Biriyle masaya oturmadan önce gerçekte kim olduğunu bilin. Sahte takipçi, bot ağları, paylaşım saatlerinden sirkadiyen uyku/lokasyon ritmi ve sahnelenen vitrin ile sızan gerçeklik arasındaki maske puanı.</p>
+            <span class="method-output">HİZMET · RİSK VE BOT RADARI</span>
+          </li>
+          <li class="method-card">
+            <span class="method-number">03</span>
+            <div class="method-icon icon-action" aria-hidden="true">🔥</div>
+            <h3>Dijital Kül: İzi Silme & Unutulma</h3>
+            <p>Kendi bütün varlığınızı internetten silmek isteyebilirsiniz. Dağınık veritabanlarındaki, unutulmuş profillerdeki ve arama motorlarındaki istenmeyen izleri KVKK/GDPR ve teknik kanallarla kökünden kaldırıyoruz.</p>
+            <span class="method-output">HİZMET · PROTOKOL 02: KÜL</span>
+          </li>
+          <li class="method-card">
+            <span class="method-number">04</span>
+            <div class="method-icon icon-check" aria-hidden="true">🐚</div>
+            <h3>Dijital Sedef: Yeni Kişilik İnşası</h3>
+            <p>Geçmişi geride bırakıp yeni bir insan olmak isteyebilirsiniz. Arandığınızda hakkınızda yalnızca saygın, güçlü, doğru ve hedefinize uygun kayıtların çıkacağı sarsılmaz bir itibar zırhı kuruyoruz.</p>
+            <span class="method-output">HİZMET · PROTOKOL 03: SEDEF</span>
+          </li>
         </ol>
-
-        <div class="evidence-note"><span class="evidence-mark" aria-hidden="true">!</span><p><strong>Bir kaldırma talebi sonuç garantisi değildir.</strong> İçerik sahibi, platform ve hukukî süreçler sonucu belirler. Atlas, doğrulanmamış bir kaydı “silindi” diye sunmamalıdır.</p></div>
       </div>
     </section>
 
+    <!-- Üç Protokol -->
     <section class="section protocols-section" id="protocols" aria-labelledby="protocols-title">
       <div class="container">
         <div class="section-heading">
-          <div class="section-kicker"><span>02</span> / ÜÇ PROTOKOL</div>
-          <h2 id="protocols-title">İZ. KÜL. SEDEF.<br><span>Operasyon değil; denetlenebilir süreç.</span></h2>
-          <p>Protokol isimleri ürün dilidir. Her birinin sınırı, dayandığı kaynak ve gerçek sonucu açıkça tarif edilmelidir.</p>
+          <div class="section-kicker"><span>02</span> / ÇEKİRDEK YAKLAŞIM</div>
+          <h2 id="protocols-title">Üç Temel Protokol:<br><span>İZ · KÜL · SEDEF.</span></h2>
+          <p>Her vaka bu 3 katı protokolle ele alınır. Falcılık veya boş vaat yoktur; kaynak, doğrulama ve kanıt zinciri vardır.</p>
         </div>
 
         <div class="protocol-grid">
           <article class="protocol-card protocol-iz">
             <div class="protocol-topline"><span class="protocol-code">PROTOCOL 01</span><span class="protocol-badge">İZ</span></div>
-            <p class="protocol-verb">MAP · VERIFY</p>
-            <h3>Kendi dijital izini gör.</h3>
-            <p>Arama sonuçları, herkese açık profiller ve kurumun resmî sayfaları gibi farklı platformlardaki kayıtları kaynak ve tarihleriyle karşılaştırırız. Aynı isimdeki başka bir kişi kesin eşleşme sayılmaz.</p>
-            <div class="protocol-boundary"><b>KAPSAM DIŞI</b><span>Özel hesaplar · sızdırılmış veriler · yetkisiz kişi dosyaları</span></div>
+            <p class="protocol-verb">MAP · VERIFY · ENGAGE</p>
+            <h3>Harita, İstihbarat & Doğrulama</h3>
+            <p>İster bir başkasını (hesap/şahıs) araştırın, ister kendi dijital izinizi görün. Arama motorları, genel kayıtlar, resmî siciller ve sosyal platformlardaki veriler URL ve zaman damgasıyla haritalandırılır.</p>
+            <div class="protocol-boundary"><b>KAPSAM</b><span>360° OSINT · 12 Saha Ajanı · Karar Verici İlk Teması</span></div>
           </article>
 
           <article class="protocol-card protocol-kul">
             <div class="protocol-topline"><span class="protocol-code">PROTOCOL 02</span><span class="protocol-badge">KÜL</span></div>
-            <p class="protocol-verb">CORRECT · REQUEST REMOVAL</p>
-            <h3>Kaynağında düzeltme iste.</h3>
-            <p>Yanlış, güncelliğini yitirmiş veya gereğinden fazla görünen içerik için yayıncı ya da platformun resmî itiraz yolunu izlemeye yardımcı ol.</p>
-            <div class="protocol-boundary"><b>YAPILMAZ</b><span>Veri zehirleme · içerik sabotajı · garantili silme iddiası</span></div>
+            <p class="protocol-verb">CORRECT · PURGE · REQUEST REMOVAL</p>
+            <h3>Düzeltme, Silme ve Unutulma</h3>
+            <p>Hatalı, yanıltıcı veya süresi dolmuş veriler sihirle değil; hukuki ve resmî kanallardan (KVKK/GDPR, arama motoru dizinden çıkarma, içerik sağlayıcı paketleri) talep süreciyle kaynağından söndürülür.</p>
+            <div class="protocol-boundary"><b>KAPSAM</b><span>Veriyi kökünden kaldırma · Bağımsız teyitli silinme</span></div>
           </article>
 
           <article class="protocol-card protocol-sedef">
             <div class="protocol-topline"><span class="protocol-code">PROTOCOL 03</span><span class="protocol-badge">SEDEF</span></div>
-            <p class="protocol-verb">BUILD · REPRESENT</p>
-            <h3>Gerçek olanı görünür kıl.</h3>
-            <p>Sahibi olduğun kanallarda tutarlı, doğrulanabilir bilgi oluştur. Amaç arama sonucunu manipüle etmek değil, doğru birincil kaynağı erişilebilir kılmaktır.</p>
-            <div class="protocol-boundary"><b>YAPILMAZ</b><span>Sahte kimlik · sahte yorum · spam bağlantı · sıralama vaadi</span></div>
+            <p class="protocol-verb">BUILD · FORTIFY · REBORN</p>
+            <h3>Güçlendirme & Yeniden İnşa</h3>
+            <p>Geçmişi arkada bırakın. Bireyin veya kurumun kendi kontrolünde, resmî kanallarda doğru ve eksiksiz bilgilerle donatılarak itibar saldırılarına karşı doğal ve sarsılmaz bir sedef kalkanı oluşturulur.</p>
+            <div class="protocol-boundary"><b>KAPSAM</b><span>Lekesiz itibar mimarisi · Yeni dijital kimlik zırhı</span></div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- Scope / Hizmet Alanı Seçimi -->
     <section class="scope-section" id="scope" aria-labelledby="scope-title">
       <div class="container">
         <div class="scope-heading">
-          <div class="section-kicker"><span>03</span> / ÖNCE YETKİ</div>
-          <h2 id="scope-title">Bu çalışma <span>kimin için?</span></h2>
-          <p>Güvenilir inceleme, doğru sınırla başlar. Aşağıdaki örnekleri seç; bu sayfa hiçbir talep göndermez ve senden bilgi istemez.</p>
+          <div class="section-kicker"><span>03</span> / HİZMET KAPSAMI</div>
+          <h2 id="scope-title">Ne Yapmak <span>İstiyorsunuz?</span></h2>
+          <p>İhtiyacınıza uygun alanı seçin; sistem yaklaşımını inceleyin.</p>
         </div>
         <div class="scope-choice-grid" role="group" aria-label="İnceleme kapsamı örnekleri">
-          <button class="scope-choice is-selected" type="button" data-scope-choice="self" aria-pressed="true">
-            <span class="scope-choice-number">01</span><strong>Kendi dijital izim</strong><small>Kişisel hesaplarım, hakkımdaki açık kayıtlar.</small>
+          <button class="scope-choice is-selected" type="button" data-scope-choice="target" aria-pressed="true">
+            <span class="scope-choice-number">01</span><strong>Bir Hesabı / Şahsı Çözmek</strong><small>Rakip, şahıs, müzakere tarafı veya aday analizi.</small>
           </button>
-          <button class="scope-choice" type="button" data-scope-choice="organization" aria-pressed="false">
-            <span class="scope-choice-number">02</span><strong>Yetkili olduğum kurum</strong><small>Yazılı yetkim olan şirket veya marka varlıkları.</small>
+          <button class="scope-choice" type="button" data-scope-choice="purge" aria-pressed="false">
+            <span class="scope-choice-number">02</span><strong>İnternetten İzimi Silmek</strong><small>Eski kayıtları, sızıntıları ve geçmişi küle çevirme.</small>
           </button>
-          <button class="scope-choice scope-choice-boundary" type="button" data-scope-choice="third-party" aria-pressed="false">
-            <span class="scope-choice-number">03</span><strong>Başka biri hakkında</strong><small>Özel bir kişiyi araştırma talebi.</small>
+          <button class="scope-choice" type="button" data-scope-choice="rebuild" aria-pressed="false">
+            <span class="scope-choice-number">03</span><strong>Yeni Bir Kişilik Kurmak</strong><small>Sıfırdan lekesiz, dokunulmaz yeni bir itibar inşası.</small>
           </button>
         </div>
         <div class="scope-response" id="scope-response" aria-live="polite" aria-atomic="true">
           <div class="scope-response-mark" id="scope-response-mark" aria-hidden="true">✓</div>
-          <div><p class="scope-response-title" id="scope-response-title">Bu, doğru başlangıç kapsamı.</p><p class="scope-response-copy" id="scope-response-copy">Kendi hesaplarınızı ve hakkınızdaki açık kayıtları kaynaklarıyla kontrol edin. Yanlışsa, yayımlayan yerin resmî düzeltme yoluna başvurabilirsiniz.</p></div>
+          <div>
+            <p class="scope-response-title" id="scope-response-title">Hedef ve Hesap İstihbaratı Kapsamı.</p>
+            <p class="scope-response-copy" id="scope-response-copy">Açık kaynaklardaki tüm profiller 12 saha ajanı ve 7 dalga motoruyla taranır. Zafiyetler, hassasiyetler ve karşı tarafın savunmasını düşüren ilk temas stratejisi hazırlanır.</p>
+          </div>
         </div>
-        <details class="technical-note">
-          <summary>Teknik ayrıntı: açık kaynak incelemesi (OSINT) nedir?</summary>
-          <p>OSINT, herkesin erişebildiği dijital kaynaklardan bilgi toplama ve doğrulama yöntemidir. Özel hesaba girmek, sızdırılmış veri kullanmak veya aile/komşu/köy çevresinden dedikodu toplamak değildir. Kaynak ve tarih kayda alınır; isim benzerliği kesin eşleşme sayılmaz.</p>
-        </details>
       </div>
     </section>
 
+    <!-- Pineal Core -->
     <section class="pineal-section" id="pineal-core" aria-labelledby="pineal-title">
       <div class="container pineal-layout">
         <div class="pineal-copy">
-          <div class="section-kicker"><span>04</span> / PINEAL ENGINE · AYRI KATMAN</div>
-          <h2 id="pineal-title">PINEAL CORE<br><span>Modüler motor. Kanıta bağlı çalışma.</span></h2>
-          <p class="pineal-lede">Atlas Pineal'in görünen yüzü ile operasyon motoru aynı şey değildir. Ayrı motor katmanındaki yetenekler ortak bir omurgadan, kapsam ve kasa kapısı denetimleriyle yürütülür. Bu web sayfası motoru çalıştırmaz; yalnızca yaklaşımı anlatır.</p>
+          <div class="section-kicker"><span>04</span> / GÜÇ KAYNAĞI · PINEAL EPİFİZ MOTORU</div>
+          <h2 id="pineal-title">PINEAL CORE<br><span>12 Saha Ajanı. 7 Dalga Motoru.</span></h2>
+          <p class="pineal-lede">Atlas Pineal bu vitrin ve hizmet portalıdır. Arka planda ise tüm ağır taramaların, psikolojik profillemenin ve adli zaman serisi ölçümlerinin yapıldığı devasa <a href="https://github.com/AppleCurse/pineal-epifiz" target="_blank" rel="noopener">pineal-epifiz</a> çekirdeği çalışır.</p>
           <div class="engine-list">
-            <div><span class="engine-index">A</span><p><b>Kaynak haritası</b><small>Dağınık açık sinyaller, kaynağı ve bağlamı korunarak değerlendirilir.</small></p></div>
-            <div><span class="engine-index">B</span><p><b>Sinyal analizi</b><small>Tespit, güven düzeyi ve belirsizlik aynı çıktıda gösterilir; kesinlik uydurulmaz.</small></p></div>
-            <div><span class="engine-index">C</span><p><b>Kontrollü işlem</b><small>Yetkili görevler kapsam ve kasa kapısıyla yürür; uygun motor yoksa sonuç üretilmez.</small></p></div>
+            <div><span class="engine-index">A</span><p><b>7 Dalga Motoru</b><small>Frequency, Seismos, Void, Strata, Gravity, Pulse, Key — saf matematik, sıfır halüsinasyon.</small></p></div>
+            <div><span class="engine-index">B</span><p><b>12 Saha Ajanı</b><small>OSINT, Depth, Behavior, Friction, Passion, Cognitive, Mirror, Verifier, Calc, Auth, Synth, Sovereign.</small></p></div>
+            <div><span class="engine-index">C</span><p><b>Kriptografik Kanıt Zinciri</b><small>Her bulgu SHA-256 damgasıyla adli olarak mühürlenir.</small></p></div>
           </div>
-          <details class="engine-deep-dive">
-            <summary>Teknik inceleme: motor ne yapar, neyi garanti etmez?</summary>
-            <p class="deep-dive-caveat">Bu özet ayrı motor katmanına aittir; bu web arayüzü yetenekleri çalıştırmaz. İddialar ilgili motorun kodu ve testleriyle ayrıca doğrulanmalıdır.</p>
-            <div class="deep-dive-grid">
-              <article><h4>Kaynak verisi</h4><p>Listeler şemaya göre birleştirilir; mevcut kürasyon ezilmez, kaynağın vermediği alan uydurulmaz. Desteklenmeyen yöntemler sessizce eklenmez; atlanma nedeni sayılır.</p></article>
-              <article><h4>Dil tespiti</h4><p>Unicode ve dil sinyalleri deterministik biçimde değerlendirilir. Sinyal zayıfsa “bilinmiyor” döner; belirsiz güven puanı yapay biçimde yükseltilmez.</p></article>
-              <article><h4>Çeviri ve erişim</h4><p>Çeviri yalnızca yerel motorla veya izinli yerel uçla çalışır; uzak uç reddedilir. Yetenekler ortak politika/kasa kapısından geçer.</p></article>
-              <article><h4>Kanıt sınırı</h4><p>Motor çıktısı, kaynağın doğruluğunu tek başına kanıtlamaz. Kaynak, zaman, eşleşme gerekçesi ve insan incelemesi gerekir. Bu web sayfası motor API'sini çağırmaz.</p></article>
-            </div>
-          </details>
         </div>
 
         <aside class="heretic-card" aria-labelledby="heretic-title">
-          <div class="heretic-top"><span class="heretic-mark">PH</span><span class="research-badge">ADVERSARIAL METHOD</span></div>
-          <p class="heretic-kicker">PINEAL / HERETIC MODE</p>
-          <h3 id="heretic-title">Kendi sonucuna itiraz et.</h3>
-          <p>“Heretic” burada doğaüstü bir yetenek değil; sistemi kendi hipotezini çürütmeye zorlayan adversarial test yaklaşımının kod adıdır.</p>
+          <div class="heretic-top"><span class="heretic-mark">👁</span><span class="research-badge">EPİFİZ OBSERVATUARI</span></div>
+          <p class="heretic-kicker">STRATEJİK ANLATIM</p>
+          <h3 id="heretic-title">Merkezde Hiç Kapanmayan Göz.</h3>
+          <p>Dijital dünya hafıza değil, kayıt sistemidir. O kayıtlara tıklanır. Siz yöneteceksiniz.</p>
           <ul>
-            <li>Yanlış eşleşme olasılığını ara.</li>
-            <li>Karşı kanıtı ve alternatif açıklamayı göster.</li>
-            <li>Yalnızca sentetik veya açıkça yetkilendirilmiş test verisi kullan.</li>
+            <li>Şifre kırma veya kapalı hesap hackleme yoktur — 100% açık kaynak ve yasal zemin.</li>
+            <li>Hedef rıza kapısı yoktur — açık veriyi incelemek için icazet gerekmez.</li>
+            <li>TEK Kırmızı Çizgi: 18 yaş altı çocuklar asla araştırılamaz (MinorGate).</li>
           </ul>
-          <div class="heretic-status"><span class="status-dot status-dot-muted" aria-hidden="true"></span> Yöntem ilkesi · uygulama kanıtı ayrı gösterilir</div>
+          <div class="heretic-status"><span class="status-dot status-dot-teal" aria-hidden="true"></span> Epistemik Dürüstlük: Veri yoksa "bilmiyorum" der</div>
         </aside>
       </div>
     </section>
 
-    <section class="section status-section" id="status" aria-labelledby="status-title">
-      <div class="container status-layout">
-        <div class="status-copy">
-          <div class="section-kicker"><span>05</span> / SİSTEM SINIRLARI</div>
-          <h2 id="status-title">Görünen yüz ayrı.<br><span>İşleyen motor ayrı.</span></h2>
-          <p>Atlas Pineal'in bu web yüzeyi bilgilendirme ve metodoloji katmanıdır; tarama başlatmaz, vaka verisi toplamaz ve arka motoru doğrudan açığa çıkarmaz. Operasyonel yetenekler ayrı ortamda, tanımlı kapsam ve denetim kapılarıyla yürütülür.</p>
-        </div>
-        <div class="capability-table" role="table" aria-label="Atlas Pineal sistem katmanları">
-          <div class="capability-row capability-head" role="row"><span role="columnheader">KATMAN</span><span role="columnheader">SORUMLULUK</span></div>
-          <div class="capability-row" role="row"><span role="cell">Atlas Pineal · public interface</span><span class="cap-state state-prototype" role="cell">AÇIKLAMA</span></div>
-          <div class="capability-row" role="row"><span role="cell">Pineal engine · ayrı çalışma katmanı</span><span class="cap-state" role="cell">OPERASYON</span></div>
-          <div class="capability-row" role="row"><span role="cell">Yetenek omurgası ve kasa kapısı</span><span class="cap-state" role="cell">ERİŞİM DENETİMİ</span></div>
-          <div class="capability-row" role="row"><span role="cell">Beklenen iz: kaynak, zaman, analiz, onay</span><span class="cap-state" role="cell">TASARIM HEDEFİ</span></div>
-          <div class="capability-row" role="row"><span role="cell">Bu web sayfasından tarama / veri gönderimi</span><span class="cap-state" role="cell">YOK</span></div>
-        </div>
-      </div>
-      <div class="container status-footnote"><span class="status-dot status-dot-teal" aria-hidden="true"></span> Güvenlik, şifreleme ve saklama iddiaları ayrı motorun gerçek yapılandırması ve denetimiyle kanıtlanmalıdır; bu sayfa bunları varsaymaz.</div>
-    </section>
-
-    <section class="faq-section" aria-labelledby="faq-title">
+    <!-- Sık Sorulanlar -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-title">
       <div class="container faq-layout">
         <div class="faq-heading">
-          <div class="section-kicker"><span>06</span> / AÇIK CEVAPLAR</div>
-          <h2 id="faq-title">Aklınıza gelebilecek<br><span>zor sorular.</span></h2>
-          <p>Kısa cevap, açık sınır. Emin olmadığımız şeyi kesinmiş gibi söylemeyiz.</p>
+          <div class="section-kicker"><span>05</span> / NET CEVAPLAR</div>
+          <h2 id="faq-title">Aklınıza Gelebilecek<br><span>Sorular.</span></h2>
+          <p>Kısa ve net. Neyi yapıp neyi yapmadığımızı dürüstçe ortaya koyuyoruz.</p>
         </div>
         <div class="faq-list">
           <details>
-            <summary>Hakkımdaki her şeyi internetten silecek misiniz?</summary>
-            <p>Hayır. Hiç kimse bütün internetten silinmeyi garanti edemez. İçeriği yayımlayan platformun kararı ve geçerli kurallar önemlidir. Biz kaynağı bulmaya, uygun düzeltme yolunu göstermeye ve sonucu yeniden kontrol etmeye odaklanırız.</p>
+            <summary>Bir hesabı veya şahsı araştırmak istediğimde ne elde ederim?</summary>
+            <p>Hedefin herkese açık dijital ayak izlerinden 360° derinlikte bir istihbarat dosyası çıkarılır: Gerçek ilgi alanları, hassasiyet ve sürtünme noktaları, paylaşım saatlerinden sirkadiyen uyku/lokasyon ritmi, bot şişirme oranı ve onunla en etkili iletişimi kuracak savunma düşüren ilk temas köprüsü.</p>
           </details>
           <details>
-            <summary>Bir sevgiliyi, çalışanı veya komşuyu araştırıp ailesinden bilgi alır mısınız?</summary>
-            <p>Hayır. Özel kişiler hakkında rızasız dosya hazırlamayız; ailesinden, arkadaşlarından, komşularından veya köyünden dedikodu toplamayız. İş veya hukukî karar için gerekiyorsa açık rıza, meşru amaç ve uygun resmî kaynak gerekir.</p>
+            <summary>İnternetteki bütün geçmişimi silmek mümkün müdür?</summary>
+            <p>Evet, PROTOKOL 02 (KÜL) kapsamında arama motorları, eski forumlar, sızıntı listeleri ve içerik sağlayıcılar üzerinden yasal ve teknik kaldırma başvuruları yürütülür. Doğrulanmadan "silindi" denmez; sonuç bizzat kaynağından teyit edilir.</p>
           </details>
           <details>
-            <summary>Bu sayfaya kişisel bilgilerimi yazmalı mıyım?</summary>
-            <p>Hayır. Bu web sayfasında başvuru formu yoktur ve sayfa tarama başlatmaz. Parola, kimlik numarası, sağlık bilgisi veya başkasına ait özel bilgiyi paylaşmayın.</p>
+            <summary>Yeni bir kişilik ve itibar inşası (SEDEF) nasıl çalışır?</summary>
+            <p>Geçmişi arkada bırakıp internette yepyeni, saygın, doğru ve hedefinize uygun bir dijital varlık kurgulanır. Gelecekteki itibar saldırılarına karşı sarsılmaz bir sedef zırhı oluşturulur.</p>
           </details>
           <details>
-            <summary>“Yapay zekâ buldu” denirse sonuca güvenebilir miyim?</summary>
-            <p>Tek başına hayır. Bir sonuç kaynağı, tarihi, eşleşme gerekçesi ve belirsizlik bilgisiyle incelenmelidir. Benzer ad kesin kimlik değildir; insan denetimi ve sizin yetkiniz önemlidir.</p>
+            <summary>Sistem şifre kırar mı veya kapalı hesaplara sızar mı?</summary>
+            <p>Hayır. Bu bir hacker aracı değildir. Yalnızca açık kaynakları (OSINT) inceler ve matematiksel ölçümlerle çalışır. Kapalı hesaplara sızmaz, dedikodu toplamaz; her iddiasını gerçek kanıtla mühürler.</p>
+          </details>
+          <details>
+            <summary>Çocuklar hakkında araştırma yapılır mı?</summary>
+            <p>ASLA. 18 yaşından küçük hiçbir çocuk araştırma konusu olamaz (MinorGate). Tek istisna ailenin bilgisi ve konsorsiyum onayıyla resmi kayıp çocuk vakalarıdır.</p>
           </details>
         </div>
       </div>
@@ -279,8 +257,8 @@
 
     <section class="closing-section" aria-labelledby="closing-title">
       <div class="container closing-inner">
-        <div><div class="section-kicker"><span>ATLAS PINEAL</span> / OPERATING PRINCIPLE</div><h2 id="closing-title">Her iddia kaynak ister.<br><span>Her müdahale izin ister.</span></h2></div>
-        <a class="button button-primary" href="#methodology">İnceleme modeline dön <span aria-hidden="true">↑</span></a>
+        <div><div class="section-kicker"><span>ATLAS EPİFİZ</span> / HAREKETE GEÇİN</div><h2 id="closing-title">Kayıtların kurbanı olmayın.<br><span>Yöneten siz olun.</span></h2></div>
+        <a class="button button-primary" href="#services">Hizmet Seçin <span aria-hidden="true">↑</span></a>
       </div>
     </section>
   </main>
@@ -288,13 +266,13 @@
   <footer class="site-footer">
     <div class="container footer-main">
       <a class="brand footer-brand" href="#top" aria-label="Atlas Pineal sayfa başına dön">
-        <span class="brand-mark" aria-hidden="true"><span>A</span><i></i></span>
-        <span class="brand-copy"><span class="brand-name">ATLAS <b>PINEAL</b></span><span class="brand-caption">DIGITAL EXPOSURE INTELLIGENCE</span></span>
+        <span class="brand-mark" aria-hidden="true"><span>👁</span><i></i></span>
+        <span class="brand-copy"><span class="brand-name">ATLAS <b>PINEAL</b></span><span class="brand-caption">PINEAL OBSERVATORY // ÖZEL DİJİTAL İSTİHBARAT</span></span>
       </a>
-      <p class="footer-principle">KANIT. KAPSAM. ONAY.</p>
+      <p class="footer-principle">İZ · KÜL · SEDEF</p>
       <a class="footer-top" href="#top">BAŞA DÖN ↑</a>
     </div>
-    <div class="container footer-bottom"><span>© <span id="current-year">2026</span> Atlas Pineal</span><span>Ürün prototipi · Güvenlik ve gizlilik iddiaları ancak uygulanıp doğrulandığında yayımlanır.</span></div>
+    <div class="container footer-bottom"><span>© <span id="current-year">2026</span> Atlas Pineal · Pineal Epifiz Ekosistemi</span><span>Kanıta dayalı dijital maruziyet zekası, istihbarat ve itibar portalı.</span></div>
   </footer>
 </body>
 </html>

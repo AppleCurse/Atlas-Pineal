@@ -1,8 +1,7 @@
 # Atlas Pineal · Digital Exposure Intelligence
+> **“Dijital dünya hafıza değil, kayıt sistemidir. Her tıklama kaydedilir. Atlas Pineal der ki: Siz yöneteceksiniz. Merkezde hiç kapanmayan EPİFİZ GÖZÜ var.”**
 
-> **“Dijital dünya hafıza değil, kayıt sistemidir. Her tıklama kaydedilir. Atlas Pineal der ki: Siz yöneteceksiniz. Merkezde hiç kapanmayan Epifiz Gözü var.”**
-
-Atlas Pineal; bireyler ve kurumlar için **kanıta dayalı dijital maruziyet haritalama, itibar doğrulaması ve yasal düzeltme süreçlerini** kamuya açıklayan resmî vitrin, anlatı ve gözlem portalıdır.
+Atlas Pineal; bireyler ve kurumlar için **hedef istihbaratı**, **adli risk radarı**, **dijital iz silme (KÜL)** ve **yeni kimlik inşası (SEDEF)** süreçlerini kamuya sunan resmî vitrin, anlatı ve özel hizmet portalıdır.
 
 ---
 
@@ -10,10 +9,12 @@ Atlas Pineal; bireyler ve kurumlar için **kanıta dayalı dijital maruziyet har
 
 İnternet çağında bir insanın ya da kurumun dijital ayak izi; parçalanmış veritabanlarında, unutulmuş profillerde, yanıltıcı arama sonuçlarında ve doğrulanmamış kayıtlarda dağınık halde bulunur. Çoğu zaman bu kayıtlar eski, bağlamından koparılmış veya tamamen başka bir adaşa aittir.
 
-**Atlas Pineal bu kaosu üç aşamalı bir disiplinle çözer:**
-1. **Görünür Kılar:** İnternette sizin hakkınızda ne göründüğünü kaynak ve zaman damgasıyla ortaya çıkarır.
-2. **Doğrular:** İsim benzerliği, dedikodu veya asılsız iddiaları eler; yalnızca kanıtlanabilir açık kaynak verisini (OSINT) dikkate alır.
-3. **Harekete Geçirir:** Yanlış veya zararlı kayıtların resmî, yasal ve kurumsal yollarla düzeltilmesi/kaldırılması için rehberlik eder.
+**Atlas Pineal bu kaosu dört temel hizmet kapısıyla çözer:**
+
+1. **Hedef ve Hesap İstihbaratı:** Bir hesabı veya şahsı 360° açık kaynaklardan (OSINT) çözün. Gerçek kimlik, gizlenen ilgi alanları, hassasiyet ve sürtünme noktaları ve muhatabın savunmasını düşüren ilk temas köprüsü.
+2. **Kiminle Karşı Karşıyasınız? (Risk Radarı):** Ortaklık, evlilik, iş anlaşması veya yatırım öncesi sahte takipçiyi, bot ağlarını, sirkadiyen uyku/lokasyon ritmini ve sahnelenen vitrin çelişkilerini belgeler.
+3. **Dijital Kül: İzi Silme & Unutulma (`PROTOKOL 02: KÜL`):** Kendi bütün varlığınızı internetten silmek isteyebilirsiniz. Arama motorlarından, eski forumlardan ve sızıntı havuzlarından yasal ve teknik yollarla verileri kökünden söndürün.
+4. **Dijital Sedef: Yeni Kişilik & İtibar İnşası (`PROTOKOL 03: SEDEF`):** Geçmişi arkada bırakın. İnternette hakkınızda yalnızca saygın, güçlü ve hedefinize uygun profesyonel kayıtların çıkacağı sarsılmaz bir itibar kalkanı kurun.
 
 ---
 
@@ -24,15 +25,15 @@ Atlas Pineal, bağımsız ama birbiriyle konuşan üç ayaklı Pineal altyapıs�
 ```mermaid
 flowchart TD
     subgraph PORTAL["1. ATLAS PINEAL (Bu Depo)"]
-        A1["Kamusal Web Gözlemevi"]
-        A2["Metodoloji & Protokol Anlatısı"]
+        A1["Kamusal Hizmet ve İstihbarat Portalı"]
+        A2["Metodoloji & Protokol Anlatısı (İZ · KÜL · SEDEF)"]
         A3["Sıfır Bağımlılıklı Güvenli Web Sunucusu"]
     end
 
     subgraph ENGINE["2. PINEAL EPIFIZ (Merkezi Operasyon Motoru)"]
         E1["12 Bilişsel Analiz Ajanı"]
-        E2["Yaşam Kırılması & Kanıt Grafı"]
-        E3["OSINT & Adli Medya Analiz Çekirdeği"]
+        E2["7 Deterministik Dalga Motoru (Frequency, Seismos, Void...)"]
+        E3["OSINT & Adli Kanıt Grafı (SHA-256 Mühür)"]
     end
 
     subgraph MOBILE["3. PINEAL ANDROID COMPANION (Saha Terminali)"]
@@ -45,7 +46,7 @@ flowchart TD
     MOBILE <==>|"Mobil API Köprüsü"| ENGINE
 ```
 
-* **Atlas-Pineal (Bu Depo):** Ürünün felsefesini, sınırlarını ve protokollerini anlatan; tarama başlatmayan, veri toplamayan, tamamen güvenli statik gözlem portalıdır.
+* **Atlas-Pineal (Bu Depo):** Ürünün felsefesini, özel hizmet kapılarını ve protokollerini anlatan; tarama başlatmayan, veri toplamayan, tamamen güvenli statik gözlem portalıdır.
 * **[pineal-epifiz](https://github.com/AppleCurse/pineal-epifiz):** Tüm ağır taramaların, 12 uzman ajanın, psikolojik profillemenin, görsel adli analizin ve kanıt zincirinin çalıştığı asıl operasyonel motordur.
 * **[pineal-android-companion](https://github.com/AppleCurse/pineal-android-companion):** Saha operatörünün cebinde taşıdığı Android istemcisidir.
 
@@ -53,26 +54,25 @@ flowchart TD
 
 ## 3. Üç Temel Protokol: İZ · KÜL · SEDEF
 
-Atlas Pineal'in operasyonel yaklaşımı 3 katı protokolle tarif edilir:
+### 🔍 PROTOKOL 01: İZ (Harita, İstihbarat & Doğrulama)
+* **Kendi dijital izinizi görün ya da hedefi analiz edin:** Arama motorları, kamusal kayıtlar, resmî siciller ve sosyal platformlardaki veriler URL ve erişim tarihiyle haritalandırılır.
+* **Sınır:** Yalnızca açık kaynak verisi incelenir. İsim benzerliği tek başına eşleşme sayılmaz; bağlam ve bağımsız teyit aranır.
 
-### 🔍 PROTOKOL 01: İZ (Map & Verify)
-* **Kendi dijital izinizi görün:** Arama motorları, kamusal kayıtlar, resmî siciller ve sosyal platformlardaki veriler URL ve erişim tarihiyle haritalandırılır.
-* **Sınır:** Yalnızca açık kaynak ve yetkili alanlar incelenir. İsim benzerliği tek başına eşleşme sayılmaz; bağlam ve bağımsız teyit aranır.
-
-### 🔥 PROTOKOL 02: KÜL (Correct & Request Removal)
-* **Kaynağında düzeltme isteyin:** Hatalı, yanıltıcı veya süresi dolmuş veriler sihirli bir biçimde "yok edilmez"; hukuki ve resmî kanallardan (KVKK/GDPR, arama motoru kaldırma talepleri, içerik sağlayıcı bildirimleri) talep süreci başlatılır.
+### 🔥 PROTOKOL 02: KÜL (Düzeltme, Silme ve Unutulma)
+* **Kaynağında düzeltme ve silme:** Hatalı, yanıltıcı veya süresi dolmuş veriler sihirli bir biçimde "yok edilmez"; hukuki ve resmî kanallardan (KVKK/GDPR, arama motoru kaldırma talepleri, içerik sağlayıcı bildirimleri) talep süreci başlatılır.
 * **Sınır:** Talep gönderilmiş olması içeriğin silindiği anlamına gelmez; sonuç bizzat kaynağında doğrulanmadan "temizlendi" denmez.
 
-### 🛡️ PROTOKOL 03: SEDEF (Fortify & Rebuild)
-* **Doğru bilgiyi kalıcı kılın:** Sahte kimlik veya manipülasyon değil; bireyin/kurumun kendi kontrolündeki resmî kanallarda doğru ve eksiksiz bilgiyi inşa ederek gelecekteki itibar saldırılarına karşı doğal bir kalkan oluşturmasıdır.
+### 🛡️ PROTOKOL 03: SEDEF (Güçlendirme & Yeniden İnşa)
+* **Yeni bir insan veya sarsılmaz bir itibar:** Sahte kimlik veya manipülasyon değil; bireyin/kurumun kendi kontrolündeki resmî kanallarda doğru ve eksiksiz bilgiyi inşa ederek gelecekteki itibar saldırılarına karşı doğal bir kalkan oluşturmasıdır.
 
 ---
 
 ## 4. Epistemik Dürüstlük İlkeleri
 
-* **Varsayıma Yer Yok:** Her bulgu kaynak URL, zaman damgası ve doğruluk güven düzeyiyle etiketlenir.
-* **Fail-Closed Güvenlik:** Bir bilginin kaynağı doğrulanamıyorsa "temiz" veya "kesin" denmez; belirsizlik şeffafça raporda kalır.
-* **Önce İzin, Sonra Analiz:** Gizli hesaplar, sızıntı veritabanları veya izinsiz takip araçları sistemin felsefesiyle bağdaşmaz.
+* **Hedef Rıza Kapısı Yoktur:** Kamuya açık profillerin ve dijital ayak izlerinin incelenmesinde hedef rızası aranmaz; yetki ve sorumluluk operatöründedir.
+* **Şifre Kırma / Hackleme Yapılmaz:** Sistem hacker aracı değildir. Kapalı hesaplara sızmaz, dedikodu toplamaz. Yalnızca açık kaynakları (OSINT) inceler ve matematiksel olarak ölçer.
+* **TEK Kırmızı Çizgi (18 Yaş Altı):** 18 yaşından küçük hiçbir çocuk istihbarat ve analiz konusu olamaz (`MinorGate`).
+* **Sıfır Halüsinasyon:** Veri yoksa "bilmiyorum" der; her iddianın arkasına kriptografik kanıt koyar.
 
 ---
 
@@ -80,7 +80,6 @@ Atlas Pineal'in operasyonel yaklaşımı 3 katı protokolle tarif edilir:
 
 Atlas Pineal web yüzeyi sıfır dış bağımlılıkla (harici NPM paketine veya üçüncü taraf kütüphaneye ihtiyaç duymadan) çalışacak şekilde tasarlanmıştır.
 
-### Node.js ile Çalıştırma:
 ```bash
 # Depoyu klonlayın
 git clone https://github.com/AppleCurse/Atlas-Pineal.git
@@ -97,12 +96,6 @@ Tarayıcınızda `http://localhost:3000` adresine gidin.
 ```bash
 docker compose up -d
 ```
-
-### Güvenlik Başlıkları:
-Yerleşik `server.mjs` sunucusu şu sıkı güvenlik standartlarıyla donatılmıştır:
-* **Content Security Policy (CSP):** `default-src 'self'`, sıfır dış betik/font izni.
-* **Byte-Range Desteği:** Tanıtım ve konsol videoları için HTTP 206 kısmi akış desteği.
-* **Dizin Atlama Koruması:** `path.resolve` ve null byte denetimleriyle güvenli dosya sunumu.
 
 ---
 

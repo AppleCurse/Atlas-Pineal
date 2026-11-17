@@ -34,20 +34,20 @@
   }
 
   const scopeCopy = {
-    self: {
-      title: 'Bu, doğru başlangıç kapsamı.',
-      copy: 'Kendi hesaplarınızı ve hakkınızdaki açık kayıtları kaynaklarıyla kontrol edin. Yanlışsa, yayımlayan yerin resmî düzeltme yoluna başvurabilirsiniz.',
-      mark: '✓'
+    target: {
+      title: 'Hedef ve Hesap İstihbaratı Kapsamı.',
+      copy: 'Açık kaynaklardaki tüm profiller 12 saha ajanı ve 7 dalga motoruyla taranır. Zafiyetler, hassasiyetler ve karşı tarafın savunmasını düşüren ilk temas stratejisi hazırlanır.',
+      mark: '⌖'
     },
-    organization: {
-      title: 'Yazılı yetki ve net sınır gerekir.',
-      copy: 'Temsil ettiğiniz kurum için hangi alanların inceleneceği ve hangi işlemlere izin verildiği önceden belirlenmelidir. Parola veya özel hesap erişimi istenmez.',
-      mark: '✓'
+    purge: {
+      title: 'Dijital Kül: İzi Silme & Unutulma Kapsamı.',
+      copy: 'Geçmişte kalmış hatalı, yanıltıcı veya istenmeyen verilerinizin arama motorları ve içerik sağlayıcılar üzerinden yasal ve teknik yollarla kökünden kaldırılması sürecidir.',
+      mark: '🔥'
     },
-    'third-party': {
-      title: 'Bu talebi kabul etmeyiz.',
-      copy: 'Özel bir kişiyi rızası olmadan araştırmayız; ailesinden, arkadaşlarından, komşularından veya köyünden dedikodu toplamayız. Gerekli bir resmî kontrol varsa, açık rıza ve uygun resmî kaynaklar kullanılmalıdır.',
-      mark: '×'
+    rebuild: {
+      title: 'Dijital Sedef: Yeni Kişilik & İtibar İnşası Kapsamı.',
+      copy: 'Geçmişi arkada bırakın. İnternette hakkınızda yalnızca saygın, güçlü ve hedefinize uygun profesyonel kayıtların çıkacağı sarsılmaz bir itibar kalkanı örülür.',
+      mark: '🐚'
     }
   };
 
@@ -69,7 +69,6 @@
         choice.setAttribute('aria-pressed', String(selected));
       });
 
-      scopeResponse.classList.toggle('is-boundary', selectedScope === 'third-party');
       scopeTitle.textContent = response.title;
       scopeDescription.textContent = response.copy;
       scopeMark.textContent = response.mark;
@@ -80,10 +79,10 @@
   const listenLabel = document.querySelector('#listen-label');
   const speechStatus = document.querySelector('#speech-status');
   const overviewText = [
-    'Atlas Pineal, internette sizin hakkınızda ne göründüğünü anlamanıza yardımcı olur.',
-    'Önce yalnızca sizin veya yetki verdiğiniz kurumun kapsamı belirlenir. Sonra kaynağa bakılır, bilgi doğrulanır ve gerekiyorsa resmî düzeltme yolu seçilir.',
-    'Hiçbir kaldırma sonucu garanti edilmez. Özel kişiler hakkında izinsiz araştırma yapılmaz; aileden, komşudan veya köyden dedikodu toplanmaz.',
-    'Bu web sayfası tarama başlatmaz ve kişisel bilgi toplamaz. Karar ve onay her zaman sizde kalır.'
+    'Atlas Pineal. Dijital dünya bir hafıza değil, kayıt sistemidir. O kayıtlara her gün tıklanıyor.',
+    'Atlas Pineal der ki: Kayıtları siz yöneteceksiniz. Merkezde hiç kapanmayan Epifiz Gözü var.',
+    'Bir hesabı veya şahsı araştırmak, kiminle karşı karşıya olduğunuzu kanıtıyla bilmek, internetteki bütün varlığınızı silmek ya da sıfırdan yeni ve lekesiz bir kişilik inşa etmek isteyenler için özel hizmet sunuyoruz.',
+    'Arka planda on iki saha ajanı ve yedi dalga motoruyla çalışan Pineal Epifiz çekirdeği bulunur. Her iddia kanıtla mühürlenir.'
   ].join(' ');
 
   if (listenButton && listenLabel && speechStatus) {
@@ -108,7 +107,7 @@
         listenButton.setAttribute('aria-pressed', 'true');
         listenButton.setAttribute('aria-label', 'Sesli özeti durdur');
         listenLabel.textContent = 'Dinlemeyi durdur';
-        speechStatus.textContent = 'Kısa özet okunuyor.';
+        speechStatus.textContent = 'Manifesto okunuyor.';
       };
       utterance.onend = () => {
         resetListenButton();
@@ -116,7 +115,7 @@
       };
       utterance.onerror = () => {
         resetListenButton();
-        speechStatus.textContent = 'Ses bu cihazda başlatılamadı. Metni okuyabilir veya cihazınızın erişilebilirlik ayarlarını kullanabilirsiniz.';
+        speechStatus.textContent = 'Ses bu cihazda başlatılamadı.';
       };
 
       listenButton.setAttribute('aria-pressed', 'true');
@@ -129,7 +128,7 @@
   function resetListenButton() {
     if (!listenButton || !listenLabel) return;
     listenButton.setAttribute('aria-pressed', 'false');
-    listenButton.setAttribute('aria-label', 'Atlas Pineal kısa özetini dinle');
-    listenLabel.textContent = 'Kısa özeti dinle';
+    listenButton.setAttribute('aria-label', 'Manifestoyu dinle');
+    listenLabel.textContent = 'Manifestoyu Dinle';
   }
 })();
