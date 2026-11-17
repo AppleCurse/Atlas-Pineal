@@ -3,276 +3,361 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1421">
-  <meta name="description" content="Atlas Pineal — Kişiler ve kurumlar için kanıta dayalı hedef istihbaratı, dijital maruziyet radarı, dijital iz silme (KÜL) ve yeni kimlik inşası (SEDEF) portalı.">
-  <title>Atlas Pineal — Digital Exposure Intelligence</title>
+  <meta name="theme-color" content="#050403">
+  <meta name="description" content="Atlas Pineal — Kişiler ve kurumlar için kanıta dayalı hedef istihbaratı, risk radarı, dijital iz silme (KÜL) ve yeni itibar inşası (SEDEF) portalı.">
+  <title>ATLAS PINEAL — Pineal Observatory // Özel Dijital İstihbarat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <script src="/app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">İçeriğe geç</a>
+  <!-- CRT Scanlines & Atmospheric Vignette -->
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
 
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Atlas Pineal ana sayfa">
-        <span class="brand-mark" aria-hidden="true"><span>👁</span><i></i></span>
+      <a class="brand" href="#top" aria-label="Atlas Pineal Gözlemevi Ana Sayfa">
+        <span class="brand-eye" aria-hidden="true">👁</span>
         <span class="brand-copy">
-          <span class="brand-name">ATLAS <b>PINEAL</b></span>
+          <span class="brand-name">ATLAS <b>EPİFİZ</b></span>
           <span class="brand-caption">PINEAL OBSERVATORY // ÖZEL DİJİTAL İSTİHBARAT</span>
         </span>
       </a>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-        <span class="menu-toggle-lines" aria-hidden="true"></span>
-        <span class="visually-hidden">Gezinme menüsünü aç</span>
-      </button>
-
-      <nav class="primary-nav" id="primary-nav" aria-label="Ana gezinme">
-        <a href="#services">Hizmetlerimiz</a>
-        <a href="#protocols">Üç Protokol (İZ · KÜL · SEDEF)</a>
-        <a href="#scope">Hizmet Alanı</a>
-        <a href="#pineal-core">Pineal Core</a>
+      <nav class="primary-nav" id="primary-nav" aria-label="Ana Gezinme">
+        <a href="#observatory">Gözlemevi</a>
+        <a href="#services">Dört Hizmet Konsolu</a>
+        <a href="#protocols">Üç Protokol (İZ·KÜL·SEDEF)</a>
+        <a href="#terminal-section">Canlı Terminal</a>
+        <a href="#constitution">İlkeler</a>
         <a href="#faq">Sık Sorulanlar</a>
-        <a class="button button-small button-dark" href="#services">Hizmet Al <span aria-hidden="true">↘</span></a>
+        <a class="button-cockpit-nav" href="https://github.com/AppleCurse/pineal-epifiz" target="_blank" rel="noopener">PINEAL CORE (GitHub) ↗</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero-grid-pattern" aria-hidden="true"></div>
-      <div class="container hero-layout">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> ATLAS EPİFİZ // GÖZLEMEVİ <span class="eyebrow-divider">/</span> v3.0</div>
-          <p class="hero-status"><span class="status-dot" aria-hidden="true"></span> ÖZEL DİJİTAL İSTİHBARAT & İTİBAR PORTALI</p>
-          <h1 id="hero-title">Dijital dünya hafıza değil,<br><span>kayıt sistemidir.</span></h1>
-          <p class="hero-lede">Her tıklama kaydedilir. <strong>Atlas Pineal</strong> der ki: <em>Kayıtları siz yöneteceksiniz.</em> Merkezde hiç kapanmayan <strong>Epifiz Gözü</strong> var. Bir hesabı çözmek, bir şahsın geçmiş riskini görmek, internetteki bütün varlığını silmek ya da sıfırdan yeni ve lekesiz bir kişilik inşa etmek isteyenler için arka planda devasa <a href="https://github.com/AppleCurse/pineal-epifiz" target="_blank" rel="noopener">Pineal Epifiz</a> motoru çalışır.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#services">Hizmetlerimizi İnceleyin <span aria-hidden="true">↓</span></a>
-            <a class="text-link" href="#protocols">Üç Protokol (İZ · KÜL · SEDEF) <span aria-hidden="true">→</span></a>
-            <button class="button button-listen" id="listen-overview" type="button" aria-pressed="false">
-              <span class="listen-icon" aria-hidden="true">▶</span><span id="listen-label">Manifestoyu Dinle</span>
-            </button>
-          </div>
-          <p class="audio-note">Sesli özet, cihazınızın yerleşik sentezleyicisini kullanır; ses kaydı alınmaz.</p>
-          <p class="audio-status" id="speech-status" role="status" aria-live="polite"></p>
-          <div class="scope-notice">
-            <div class="scope-icon" aria-hidden="true">👁</div>
-            <p><strong>Merkezdeki Göz:</strong> Kaynak · Korelasyon · Analiz · Doğrulama · Bağlam. Açık kaynaklar matematiksel olarak ölçülür, her iddianın arkasına kanıt mühürlenir.</p>
+    <!-- HERO: The Grand Steampunk Cathedral & Epifiz Gözü -->
+    <section class="hero" id="top">
+      <div class="container">
+        
+        <!-- Arch Plaque -->
+        <div class="hero-arch-badge">
+          <span class="brass-ribbon">✦ ATLAS EPİFİZ ✦ PINEAL OBSERVATORY ✦</span>
+        </div>
+
+        <!-- Cathedral Master Visual Stage -->
+        <div class="hero-backdrop-wrap" id="observatory">
+          <img 
+            src="/hero.jpg" 
+            alt="Atlas Epifiz Steampunk Gözlemevi Katedrali ve Merkezdeki Epifiz Gözü" 
+            class="hero-backdrop-img"
+            onerror="this.src='/eye.jpg'"
+          >
+          <div class="hero-img-overlay"></div>
+          <div class="hero-visual-caption">
+            <span>MERKEZDE HİÇ KAPANMAYAN EPİFİZ GÖZÜ // OPERATÖR KÖPRÜSÜ</span>
           </div>
         </div>
 
-        <section class="pipeline-panel" aria-labelledby="pipeline-title">
-          <div class="pipeline-header">
-            <div><p class="panel-kicker">4 TEMEL HİZMET KAPISI</p><h2 id="pipeline-title">Neye İhtiyacınız Var?</h2></div>
-            <span class="spec-badge">12 SAHA AJANI<br><b>7 DALGA MOTORU</b></span>
-          </div>
-          <ol class="pipeline-list">
-            <li><span class="pipeline-number">01</span><div><h3>Bir Hesabı / Şahsı Araştırmak</h3><p>360° açık kaynak istihbaratı ve ilk temas stratejisi.</p></div><span class="pipeline-tag">İSTİHBARAT</span></li>
-            <li><span class="pipeline-number">02</span><div><h3>Kiminle Masadasınız? (Risk Radarı)</h3><p>Ortaklık, evlilik, iş öncesi bot ve gerçeklik testi.</p></div><span class="pipeline-tag">RADAR</span></li>
-            <li><span class="pipeline-number">03</span><div><h3>Varlığınızı İnternetten Silmek</h3><p>PROTOKOL 02: KÜL ile kayıtları kaynağında söndürme.</p></div><span class="pipeline-tag">KÜL</span></li>
-            <li><span class="pipeline-number">04</span><div><h3>Yeni Bir Kişilik & İtibar İnşası</h3><p>PROTOKOL 03: SEDEF ile lekesiz yeni dijital kimlik zırhı.</p></div><span class="pipeline-tag">SEDEF</span></li>
-          </ol>
-          <div class="pipeline-footer"><span class="status-dot status-dot-teal" aria-hidden="true"></span> Arka planda 12 uzman ajan, görsel adli analiz ve kriptografik kanıt zinciri devrede.</div>
-        </section>
-      </div>
+        <!-- The 5 Gilded Rings Ribbon -->
+        <div class="five-rings-strip" aria-label="Beş Temel Disiplin Halkası">
+          <div class="ring-node"><span>01</span> KAYNAK</div>
+          <div class="ring-dot">✦</div>
+          <div class="ring-node"><span>02</span> KORELASYON</div>
+          <div class="ring-dot">✦</div>
+          <div class="ring-node"><span>03</span> ANALİZ</div>
+          <div class="ring-dot">✦</div>
+          <div class="ring-node"><span>04</span> DOĞRULAMA</div>
+          <div class="ring-dot">✦</div>
+          <div class="ring-node"><span>05</span> BAĞLAM</div>
+        </div>
 
-      <div class="container hero-bottom">
-        <span>KAYNAK <b>·</b> KORELASYON <b>·</b> ANALİZ <b>·</b> DOĞRULAMA <b>·</b> BAĞLAM</span>
-        <a href="#services">DÖRT HİZMET ALANI <span aria-hidden="true">↓</span></a>
+        <!-- Manifesto Headline -->
+        <h1 class="hero-main-title">
+          Dijital dünya hafıza değil,<br>
+          <span>kayıt sistemidir.</span>
+        </h1>
+
+        <!-- Manifesto Lead -->
+        <div class="hero-manifesto-quote">
+          O kayıtlara her an tıklanıyor. <strong>Atlas Pineal</strong> diyor ki: <em>Kayıtları siz yöneteceksiniz.</em>
+          Merkezde hiç kapanmayan <strong>Epifiz Gözü</strong> var. Bir hesabı çözmek, bir şahsın gerçek geçmiş riskini görmek, internetteki bütün varlığını silmek ya da sıfırdan yeni ve lekesiz bir kişilik inşa etmek isteyenler için arka planda 12 uzman saha ajanı ve 7 dalga motoruyla çalışan devasa <a href="https://github.com/AppleCurse/pineal-epifiz" target="_blank" rel="noopener">Pineal Epifiz</a> motoru çalışır.
+        </div>
+
+        <!-- Action Row -->
+        <div class="hero-actions-center">
+          <a class="console-btn btn-large" href="#services">DÖRT HİZMET KONSOLUNU AÇ ↓</a>
+          <button class="button-listen" id="listen-overview" type="button" aria-pressed="false">
+            <span class="listen-icon" aria-hidden="true">▶</span>
+            <span id="listen-label">Manifestoyu Dinle (Sesli)</span>
+          </button>
+        </div>
+        <p class="audio-status" id="speech-status" role="status" aria-live="polite"></p>
+
+        <!-- The 3 Holographic Data Cores -->
+        <div class="observatory-triad-strip">
+          <div class="triad-cell cell-gold">
+            <div class="cell-icon">⚡</div>
+            <h3>Altın Frekans Alanı</h3>
+            <p><strong>7 Dalga Motoru:</strong> Frequency, Seismos, Void, Strata, Gravity, Pulse, Key. Saf matematiksel zaman serisi analizi; sıfır halüsinasyon, sıfır temelsiz iddia.</p>
+          </div>
+          <div class="triad-cell cell-brain">
+            <div class="cell-icon">🧠</div>
+            <h3>Kozmik Epifiz Beyin</h3>
+            <p><strong>Bilişsel & Psikolojik Profil:</strong> Muhatabın savunmasını düşüren sirkadiyen paylaşım ritmi, bilişsel zafiyetler ve ilk teması kuran stratejik köprü.</p>
+          </div>
+          <div class="triad-cell cell-cyan">
+            <div class="cell-icon">🕸</div>
+            <h3>Siyan Nöral Ağ</h3>
+            <p><strong>12 Saha Ajanı:</strong> 360° açık kaynak (OSINT) keşfi, bot/gerçeklik testi ve her bulguyu SHA-256 damgasıyla adli olarak mühürleyen kanıt zinciri.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- 4 Hizmet Alanı Detayı -->
-    <section class="section services-section" id="services" aria-labelledby="services-title">
+    <!-- 4 SERVICES / CONSOLE BRIDGE -->
+    <section class="consoles-section" id="services">
       <div class="container">
-        <div class="section-heading section-heading-row">
-          <div>
-            <div class="section-kicker"><span>01</span> / ÖZEL HİZMET KAPILARI</div>
-            <h2 id="services-title">İnternetteki Kaosu<br><span>Dört Disiplinle Yönetiyoruz.</span></h2>
-          </div>
-          <p>Bizden özel hizmet alabilirsiniz. Bir hedefi çözmek, kiminle karşı karşıya olduğunuzu bilmek, geçmişi tamamen silmek veya sıfırdan yeni bir kişilik inşa etmek.</p>
+        
+        <div class="section-head">
+          <p class="section-kicker">✦ OPERATÖR KÖPRÜSÜ // DÖRT HİZMET KAPISI ✦</p>
+          <h2 class="section-title">İnternetteki Kaosu <span>Dört Konsolla</span> Yönetiyoruz.</h2>
+          <p class="section-desc">Bizden doğrudan özel hizmet alabilirsiniz. İhtiyacınız olan konsolu seçin, verinizi girin veya doğrudan analiz talebinde bulunun.</p>
         </div>
 
-        <ol class="method-grid">
-          <li class="method-card">
-            <span class="method-number">01</span>
-            <div class="method-icon icon-scope" aria-hidden="true">⌖</div>
-            <h3>Hedef ve Hesap İstihbaratı</h3>
-            <p>Bir hesabı veya şahsı 360° açık kaynaklardan (OSINT) çözün. Gerçek kimlik, gizlenen ilgi alanları, zafiyetler, hassasiyet noktaları ve muhatabın savunmasını düşüren 3 hamleli ilk temas köprüsü.</p>
-            <span class="method-output">HİZMET · HEDEF İSTİHBARATI</span>
-          </li>
-          <li class="method-card">
-            <span class="method-number">02</span>
-            <div class="method-icon icon-source" aria-hidden="true">🛡</div>
-            <h3>Adli Güvenilirlik & Risk Radarı</h3>
-            <p>Biriyle masaya oturmadan önce gerçekte kim olduğunu bilin. Sahte takipçi, bot ağları, paylaşım saatlerinden sirkadiyen uyku/lokasyon ritmi ve sahnelenen vitrin ile sızan gerçeklik arasındaki maske puanı.</p>
-            <span class="method-output">HİZMET · RİSK VE BOT RADARI</span>
-          </li>
-          <li class="method-card">
-            <span class="method-number">03</span>
-            <div class="method-icon icon-action" aria-hidden="true">🔥</div>
+        <div class="consoles-grid">
+          
+          <!-- KONSOL 01 -->
+          <article class="console-terminal" id="console-target">
+            <div class="console-topbar">
+              <span class="console-id">KONSOL 01 // İSTİHBARAT</span>
+              <span class="console-badge">360° OSINT</span>
+            </div>
+            <h3>Hedef & Hesap İstihbaratı</h3>
+            <p class="console-tagline">Bir hesabı veya kişiyi açık kaynaklardan köküne kadar çözün.</p>
+            <p>Muhatabın gerçek kimliği, gizlenen ilgi alanları, zafiyetleri, hassasiyet ve sürtünme noktaları ve savunmasını düşüren 3 hamleli ilk temas köprüsü. Karşı taraf masaya oturduğunda elinde ne olduğunu önceden bilin.</p>
+            
+            <form class="console-input-row" onsubmit="handleConsoleSubmit(event, 'target')">
+              <input type="text" class="console-input" id="input-target" placeholder="Örn: @kullanici veya profil linki..." required>
+              <button type="submit" class="console-btn">İSTİHBARAT BAŞLAT ↗</button>
+            </form>
+          </article>
+
+          <!-- KONSOL 02 -->
+          <article class="console-terminal" id="console-radar">
+            <div class="console-topbar">
+              <span class="console-id">KONSOL 02 // GÜVENİLİRLİK</span>
+              <span class="console-badge">RİSK & BOT RADARI</span>
+            </div>
+            <h3>Kişi Geçmişi & Risk Radarı</h3>
+            <p class="console-tagline">Kiminle masadasınız? Ortaklık, evlilik, iş öncesi maske testi.</p>
+            <p>Şahsın sahnelediği vitrin ile sızan gerçeklik arasındaki farkı ölçün. Sahte takipçiler, bot ağları, paylaşım saatlerinden sirkadiyen uyku/lokasyon ritmi ve geçmiş tutarlılık skoru.</p>
+            
+            <form class="console-input-row" onsubmit="handleConsoleSubmit(event, 'radar')">
+              <input type="text" class="console-input" id="input-radar" placeholder="Örn: İsim Soyisim veya Kurum..." required>
+              <button type="submit" class="console-btn">RADARI ÇALIŞTIR ↗</button>
+            </form>
+          </article>
+
+          <!-- KONSOL 03 -->
+          <article class="console-terminal" id="console-purge">
+            <div class="console-topbar">
+              <span class="console-id">KONSOL 03 // SİLME</span>
+              <span class="console-badge">PROTOKOL 02: KÜL</span>
+            </div>
             <h3>Dijital Kül: İzi Silme & Unutulma</h3>
-            <p>Kendi bütün varlığınızı internetten silmek isteyebilirsiniz. Dağınık veritabanlarındaki, unutulmuş profillerdeki ve arama motorlarındaki istenmeyen izleri KVKK/GDPR ve teknik kanallarla kökünden kaldırıyoruz.</p>
-            <span class="method-output">HİZMET · PROTOKOL 02: KÜL</span>
-          </li>
-          <li class="method-card">
-            <span class="method-number">04</span>
-            <div class="method-icon icon-check" aria-hidden="true">🐚</div>
+            <p class="console-tagline">Kendi bütün varlığınızı internetten tamamen silmek.</p>
+            <p>Eski forum kayıtları, sızıntı veritabanları, yanıltıcı haberler, unutulmuş profiller ve arama motorlarındaki istenmeyen izler. Sihirle değil; KVKK/GDPR, resmi arama motoru dizinden çıkarma ve teknik kanallarla kaynağından söndürülür.</p>
+            
+            <form class="console-input-row" onsubmit="handleConsoleSubmit(event, 'purge')">
+              <input type="text" class="console-input" id="input-purge" placeholder="Örn: Kaldırılacak link, ad-soyad, eski kullanıcı adı..." required>
+              <button type="submit" class="console-btn">KÜL PROTOKOLÜ BAŞLAT ↗</button>
+            </form>
+          </article>
+
+          <!-- KONSOL 04 -->
+          <article class="console-terminal" id="console-rebuild">
+            <div class="console-topbar">
+              <span class="console-id">KONSOL 04 // İNŞA</span>
+              <span class="console-badge">PROTOKOL 03: SEDEF</span>
+            </div>
             <h3>Dijital Sedef: Yeni Kişilik İnşası</h3>
-            <p>Geçmişi geride bırakıp yeni bir insan olmak isteyebilirsiniz. Arandığınızda hakkınızda yalnızca saygın, güçlü, doğru ve hedefinize uygun kayıtların çıkacağı sarsılmaz bir itibar zırhı kuruyoruz.</p>
-            <span class="method-output">HİZMET · PROTOKOL 03: SEDEF</span>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Üç Protokol -->
-    <section class="section protocols-section" id="protocols" aria-labelledby="protocols-title">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-kicker"><span>02</span> / ÇEKİRDEK YAKLAŞIM</div>
-          <h2 id="protocols-title">Üç Temel Protokol:<br><span>İZ · KÜL · SEDEF.</span></h2>
-          <p>Her vaka bu 3 katı protokolle ele alınır. Falcılık veya boş vaat yoktur; kaynak, doğrulama ve kanıt zinciri vardır.</p>
-        </div>
-
-        <div class="protocol-grid">
-          <article class="protocol-card protocol-iz">
-            <div class="protocol-topline"><span class="protocol-code">PROTOCOL 01</span><span class="protocol-badge">İZ</span></div>
-            <p class="protocol-verb">MAP · VERIFY · ENGAGE</p>
-            <h3>Harita, İstihbarat & Doğrulama</h3>
-            <p>İster bir başkasını (hesap/şahıs) araştırın, ister kendi dijital izinizi görün. Arama motorları, genel kayıtlar, resmî siciller ve sosyal platformlardaki veriler URL ve zaman damgasıyla haritalandırılır.</p>
-            <div class="protocol-boundary"><b>KAPSAM</b><span>360° OSINT · 12 Saha Ajanı · Karar Verici İlk Teması</span></div>
+            <p class="console-tagline">Yeni bir insan olmak, geçmişi arkada bırakıp itibar zırhı kurmak.</p>
+            <p>İnternette arandığınızda hakkınızda yalnızca saygın, güçlü, doğru ve gelecekteki hedefinize uygun kayıtların çıkmasını sağlayın. Dışarıdan gelecek iftira ve itibar suikastlerine karşı doğal sedef kalkanı örülür.</p>
+            
+            <form class="console-input-row" onsubmit="handleConsoleSubmit(event, 'rebuild')">
+              <input type="text" class="console-input" id="input-rebuild" placeholder="Örn: Hedef kimlik vizyonu, sektör veya yeni ad..." required>
+              <button type="submit" class="console-btn">SEDEF KALKANINI ÖR ↗</button>
+            </form>
           </article>
 
-          <article class="protocol-card protocol-kul">
-            <div class="protocol-topline"><span class="protocol-code">PROTOCOL 02</span><span class="protocol-badge">KÜL</span></div>
-            <p class="protocol-verb">CORRECT · PURGE · REQUEST REMOVAL</p>
-            <h3>Düzeltme, Silme ve Unutulma</h3>
-            <p>Hatalı, yanıltıcı veya süresi dolmuş veriler sihirle değil; hukuki ve resmî kanallardan (KVKK/GDPR, arama motoru dizinden çıkarma, içerik sağlayıcı paketleri) talep süreciyle kaynağından söndürülür.</p>
-            <div class="protocol-boundary"><b>KAPSAM</b><span>Veriyi kökünden kaldırma · Bağımsız teyitli silinme</span></div>
-          </article>
-
-          <article class="protocol-card protocol-sedef">
-            <div class="protocol-topline"><span class="protocol-code">PROTOCOL 03</span><span class="protocol-badge">SEDEF</span></div>
-            <p class="protocol-verb">BUILD · FORTIFY · REBORN</p>
-            <h3>Güçlendirme & Yeniden İnşa</h3>
-            <p>Geçmişi arkada bırakın. Bireyin veya kurumun kendi kontrolünde, resmî kanallarda doğru ve eksiksiz bilgilerle donatılarak itibar saldırılarına karşı doğal ve sarsılmaz bir sedef kalkanı oluşturulur.</p>
-            <div class="protocol-boundary"><b>KAPSAM</b><span>Lekesiz itibar mimarisi · Yeni dijital kimlik zırhı</span></div>
-          </article>
         </div>
       </div>
     </section>
 
-    <!-- Scope / Hizmet Alanı Seçimi -->
-    <section class="scope-section" id="scope" aria-labelledby="scope-title">
+    <!-- LIVE TERMINAL SIMULATOR -->
+    <section class="terminal-section" id="terminal-section">
       <div class="container">
-        <div class="scope-heading">
-          <div class="section-kicker"><span>03</span> / HİZMET KAPSAMI</div>
-          <h2 id="scope-title">Ne Yapmak <span>İstiyorsunuz?</span></h2>
-          <p>İhtiyacınıza uygun alanı seçin; sistem yaklaşımını inceleyin.</p>
-        </div>
-        <div class="scope-choice-grid" role="group" aria-label="İnceleme kapsamı örnekleri">
-          <button class="scope-choice is-selected" type="button" data-scope-choice="target" aria-pressed="true">
-            <span class="scope-choice-number">01</span><strong>Bir Hesabı / Şahsı Çözmek</strong><small>Rakip, şahıs, müzakere tarafı veya aday analizi.</small>
-          </button>
-          <button class="scope-choice" type="button" data-scope-choice="purge" aria-pressed="false">
-            <span class="scope-choice-number">02</span><strong>İnternetten İzimi Silmek</strong><small>Eski kayıtları, sızıntıları ve geçmişi küle çevirme.</small>
-          </button>
-          <button class="scope-choice" type="button" data-scope-choice="rebuild" aria-pressed="false">
-            <span class="scope-choice-number">03</span><strong>Yeni Bir Kişilik Kurmak</strong><small>Sıfırdan lekesiz, dokunulmaz yeni bir itibar inşası.</small>
-          </button>
-        </div>
-        <div class="scope-response" id="scope-response" aria-live="polite" aria-atomic="true">
-          <div class="scope-response-mark" id="scope-response-mark" aria-hidden="true">✓</div>
-          <div>
-            <p class="scope-response-title" id="scope-response-title">Hedef ve Hesap İstihbaratı Kapsamı.</p>
-            <p class="scope-response-copy" id="scope-response-copy">Açık kaynaklardaki tüm profiller 12 saha ajanı ve 7 dalga motoruyla taranır. Zafiyetler, hassasiyetler ve karşı tarafın savunmasını düşüren ilk temas stratejisi hazırlanır.</p>
+        <div class="terminal-frame">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-amber"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="terminal-title">PINEAL EPİFİZ // GÖZLEMEVİ ADLİ CANLI KONSOLU</div>
+            <div class="terminal-status"><span class="pulse-live"></span> CANLI SİSTEM</div>
+          </div>
+          <div class="terminal-body" id="terminal-screen">
+            <p class="term-line term-dim">--- ATLAS EPİFİZ GÖZLEMEVİ OPERATÖR ARAYÜZÜ v3.0 ---</p>
+            <p class="term-line term-brass">✦ Çekirdek Durumu: 12 Saha Ajanı Hazır | 7 Dalga Motoru Senkronize | Epifiz Gözü Açık</p>
+            <p class="term-line term-dim">✦ Yukarıdaki konsollardan bir hedef girin veya aşağıdaki hızlı testleri başlatın:</p>
+            <div class="term-presets">
+              <button type="button" class="term-preset-btn" onclick="runPresetSim('target')">[TEST 01] Hedef Hesap İstihbarat Simülasyonu</button>
+              <button type="button" class="term-preset-btn" onclick="runPresetSim('radar')">[TEST 02] Adli Risk & Sirkadiyen Ritim Analizi</button>
+              <button type="button" class="term-preset-btn" onclick="runPresetSim('purge')">[TEST 03] Protokol 02 (KÜL) Silme Haritalaması</button>
+              <button type="button" class="term-preset-btn" onclick="runPresetSim('rebuild')">[TEST 04] Protokol 03 (SEDEF) İtibar Zırhı İnşası</button>
+            </div>
+            <div id="term-output"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Pineal Core -->
-    <section class="pineal-section" id="pineal-core" aria-labelledby="pineal-title">
-      <div class="container pineal-layout">
-        <div class="pineal-copy">
-          <div class="section-kicker"><span>04</span> / GÜÇ KAYNAĞI · PINEAL EPİFİZ MOTORU</div>
-          <h2 id="pineal-title">PINEAL CORE<br><span>12 Saha Ajanı. 7 Dalga Motoru.</span></h2>
-          <p class="pineal-lede">Atlas Pineal bu vitrin ve hizmet portalıdır. Arka planda ise tüm ağır taramaların, psikolojik profillemenin ve adli zaman serisi ölçümlerinin yapıldığı devasa <a href="https://github.com/AppleCurse/pineal-epifiz" target="_blank" rel="noopener">pineal-epifiz</a> çekirdeği çalışır.</p>
-          <div class="engine-list">
-            <div><span class="engine-index">A</span><p><b>7 Dalga Motoru</b><small>Frequency, Seismos, Void, Strata, Gravity, Pulse, Key — saf matematik, sıfır halüsinasyon.</small></p></div>
-            <div><span class="engine-index">B</span><p><b>12 Saha Ajanı</b><small>OSINT, Depth, Behavior, Friction, Passion, Cognitive, Mirror, Verifier, Calc, Auth, Synth, Sovereign.</small></p></div>
-            <div><span class="engine-index">C</span><p><b>Kriptografik Kanıt Zinciri</b><small>Her bulgu SHA-256 damgasıyla adli olarak mühürlenir.</small></p></div>
-          </div>
+    <!-- THREE PROTOCOLS -->
+    <section class="protocols-section" id="protocols">
+      <div class="container">
+        
+        <div class="section-head">
+          <p class="section-kicker">✦ BİLİMSEL VE ADLİ METODOLOJİ ✦</p>
+          <h2 class="section-title">Üç Temel Protokol: <span>İZ · KÜL · SEDEF</span></h2>
+          <p class="section-desc">Her vaka bu 3 katı protokolle ele alınır. Falcılık, boş vaat ya da hacker safsatası yoktur; matematik, kaynak ve kanıt zinciri vardır.</p>
         </div>
 
-        <aside class="heretic-card" aria-labelledby="heretic-title">
-          <div class="heretic-top"><span class="heretic-mark">👁</span><span class="research-badge">EPİFİZ OBSERVATUARI</span></div>
-          <p class="heretic-kicker">STRATEJİK ANLATIM</p>
-          <h3 id="heretic-title">Merkezde Hiç Kapanmayan Göz.</h3>
-          <p>Dijital dünya hafıza değil, kayıt sistemidir. O kayıtlara tıklanır. Siz yöneteceksiniz.</p>
-          <ul>
-            <li>Şifre kırma veya kapalı hesap hackleme yoktur — 100% açık kaynak ve yasal zemin.</li>
-            <li>Hedef rıza kapısı yoktur — açık veriyi incelemek için icazet gerekmez.</li>
-            <li>TEK Kırmızı Çizgi: 18 yaş altı çocuklar asla araştırılamaz (MinorGate).</li>
-          </ul>
-          <div class="heretic-status"><span class="status-dot status-dot-teal" aria-hidden="true"></span> Epistemik Dürüstlük: Veri yoksa "bilmiyorum" der</div>
-        </aside>
+        <div class="protocols-triad">
+          
+          <article class="protocol-monolith">
+            <span class="proto-glyph">🔍</span>
+            <span class="proto-role">PROTOKOL 01 // HARİTA & DOĞRULAMA</span>
+            <h4>PROTOKOL 01: İZ</h4>
+            <p><strong>Açık Kaynakları Görün:</strong> İster bir hedefi çözün, ister kendi dijital izinizi haritalandırın. Arama motorları, siciller, forumlar ve sosyal platformlardaki kayıtlar URL ve zaman damgasıyla ortaya dökülür.</p>
+          </article>
+
+          <article class="protocol-monolith">
+            <span class="proto-glyph">🔥</span>
+            <span class="proto-role">PROTOKOL 02 // DÜZELTME & SİLME</span>
+            <h4>PROTOKOL 02: KÜL</h4>
+            <p><strong>Kaynağında Söndürün:</strong> Hatalı, yanıltıcı veya geçmişte kalmış veriler sihirle değil; hukuki ve teknik kanallarla (KVKK/GDPR, içerik kaldırıcı ve dizinden düşürme) kökünden kaldırılır.</p>
+          </article>
+
+          <article class="protocol-monolith">
+            <span class="proto-glyph">🐚</span>
+            <span class="proto-role">PROTOKOL 03 // GÜÇLENDİRME & YENİDEN İNŞA</span>
+            <h4>PROTOKOL 03: SEDEF</h4>
+            <p><strong>Yeni Kimliğinizi Zırhlayın:</strong> Geçmişi arkada bırakıp yeni bir insan olmak isteyenler için doğru, saygın ve sarsılmaz bir itibar kalkanı inşa edilir. Gelecekteki itibar saldırıları bu kabuğa çarpar.</p>
+          </article>
+
+        </div>
       </div>
     </section>
 
-    <!-- Sık Sorulanlar -->
-    <section class="faq-section" id="faq" aria-labelledby="faq-title">
-      <div class="container faq-layout">
-        <div class="faq-heading">
-          <div class="section-kicker"><span>05</span> / NET CEVAPLAR</div>
-          <h2 id="faq-title">Aklınıza Gelebilecek<br><span>Sorular.</span></h2>
-          <p>Kısa ve net. Neyi yapıp neyi yapmadığımızı dürüstçe ortaya koyuyoruz.</p>
+    <!-- CONSTITUTION & RED LINES -->
+    <section class="constitution-section" id="constitution">
+      <div class="container">
+        
+        <div class="section-head">
+          <p class="section-kicker">✦ PİRİNÇ PLAKALAR // ETİK VE TEKNİK ANAYASA ✦</p>
+          <h2 class="section-title">Neyi Yaparız, <span>Neyi Asla Yapmayız?</span></h2>
+          <p class="section-desc">Korsanlık veya boş iddialar değil; saf açık kaynak istihbaratı ve kanıtlanabilir matematik.</p>
         </div>
+
+        <div class="constitution-grid">
+          
+          <div class="plaque-box">
+            <strong>01. %100 Açık Kaynak & Yasal Zemin</strong>
+            <p>Şifre kırma, gizli hesap hackleme, cihazlara sızma gibi korsanlık yöntemleri uygulanmaz. Yalnızca herkesin görebileceği açık kaynaklar (OSINT) adli matematik ve derin korelasyonla incelenir.</p>
+          </div>
+
+          <div class="plaque-box">
+            <strong>02. Epistemik Dürüstlük</strong>
+            <p>Veri yoksa sistem "bilmiyorum" der. Asla tahminde bulunmaz, halüsinasyon görmez. Her tespit bağımsız ikinci bir kaynakla teyit edilir.</p>
+          </div>
+
+          <div class="plaque-box">
+            <strong>03. Kriptografik Kanıt Zinciri</strong>
+            <p>Bulunan her ekran görüntüsü, zaman damgası ve metin SHA-256 kriptografik özetiyle mühürlenir. Mahkemede veya resmi merciide sunulabilecek adli geçerlilik taşır.</p>
+          </div>
+
+          <div class="plaque-box red-line">
+            <strong>04. TEK KIRMIZI ÇİZGİ: MinorGate</strong>
+            <p>18 yaşından küçük hiçbir çocuk araştırma konusu olamaz. Çocukların fotoğrafları, sosyal medya hesapları veya bilgileri sisteme girilemez ve taranamaz. Tek istisna adli kayıp vakalarıdır.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        
+        <div class="section-head">
+          <p class="section-kicker">✦ MERAK EDİLENLER ✦</p>
+          <h2 class="section-title">Sık Sorulan <span>Sorular</span></h2>
+        </div>
+
         <div class="faq-list">
           <details>
-            <summary>Bir hesabı veya şahsı araştırmak istediğimde ne elde ederim?</summary>
-            <p>Hedefin herkese açık dijital ayak izlerinden 360° derinlikte bir istihbarat dosyası çıkarılır: Gerçek ilgi alanları, hassasiyet ve sürtünme noktaları, paylaşım saatlerinden sirkadiyen uyku/lokasyon ritmi, bot şişirme oranı ve onunla en etkili iletişimi kuracak savunma düşüren ilk temas köprüsü.</p>
+            <summary>Bir hesabı veya kişiyi araştırdığımda elime ne geçecek?</summary>
+            <p>Hedefin tüm açık ayak izlerinden 360° derinlikte istihbarat dosyası çıkarılır: Gerçek ilgi alanları, hassasiyet ve sürtünme noktaları, paylaşım saatlerinden sirkadiyen uyku/lokasyon ritmi, bot şişirme oranı ve onunla iletişime geçtiğinizde savunmasını anında düşürecek 3 adımlı ilk temas stratejisi.</p>
           </details>
+
           <details>
-            <summary>İnternetteki bütün geçmişimi silmek mümkün müdür?</summary>
-            <p>Evet, PROTOKOL 02 (KÜL) kapsamında arama motorları, eski forumlar, sızıntı listeleri ve içerik sağlayıcılar üzerinden yasal ve teknik kaldırma başvuruları yürütülür. Doğrulanmadan "silindi" denmez; sonuç bizzat kaynağından teyit edilir.</p>
+            <summary>İnternetteki bütün geçmişimi silmek gerçekten mümkün mü?</summary>
+            <p>Evet. PROTOKOL 02 (KÜL) ile arama motorları, unutulmuş eski web siteleri, sızıntı listeleri ve içerik sağlayıcılar üzerinden KVKK/GDPR ve teknik bildirimlerle kalıcı temizlik süreci yürütülür. Kaynağından teyit alınmadan "silindi" denmez.</p>
           </details>
+
           <details>
-            <summary>Yeni bir kişilik ve itibar inşası (SEDEF) nasıl çalışır?</summary>
-            <p>Geçmişi arkada bırakıp internette yepyeni, saygın, doğru ve hedefinize uygun bir dijital varlık kurgulanır. Gelecekteki itibar saldırılarına karşı sarsılmaz bir sedef zırhı oluşturulur.</p>
+            <summary>Yeni bir insan olmak / yeni kişilik inşası (SEDEF) nedir?</summary>
+            <p>Eski hayatınızı veya hakkınızdaki yıpratıcı geçmişi geride bırakmak istediğinizde, arandığınızda hakkınızda yalnızca saygın, güçlü, doğru ve hedefinize uygun başarıların çıktığı dokunulmaz bir dijital itibar zırhı örülmesidir.</p>
           </details>
+
           <details>
-            <summary>Sistem şifre kırar mı veya kapalı hesaplara sızar mı?</summary>
-            <p>Hayır. Bu bir hacker aracı değildir. Yalnızca açık kaynakları (OSINT) inceler ve matematiksel ölçümlerle çalışır. Kapalı hesaplara sızmaz, dedikodu toplamaz; her iddiasını gerçek kanıtla mühürler.</p>
+            <summary>Sistem şifre kırar mı veya kapalı profillere sızar mı?</summary>
+            <p>Hayır. Bu bir casus yazılım veya hack aracı değildir. Yalnızca açık kaynakları (OSINT) tarar ve matematiksel ölçümlerle çalışır. Kapalı hesaplara sızmaz, dedikodu toplamaz; her iddiasını gerçek kanıtla mühürler.</p>
           </details>
+
           <details>
-            <summary>Çocuklar hakkında araştırma yapılır mı?</summary>
-            <p>ASLA. 18 yaşından küçük hiçbir çocuk araştırma konusu olamaz (MinorGate). Tek istisna ailenin bilgisi ve konsorsiyum onayıyla resmi kayıp çocuk vakalarıdır.</p>
+            <summary>18 yaş altı kişileri aratabilir miyim?</summary>
+            <p>ASLA. MinorGate filtresi 18 yaşından küçük bireyler için hiçbir taramaya izin vermez. Çocukların mahremiyeti mutlak kırmızı çizgimizdir.</p>
           </details>
         </div>
+
       </div>
     </section>
 
-    <section class="closing-section" aria-labelledby="closing-title">
-      <div class="container closing-inner">
-        <div><div class="section-kicker"><span>ATLAS EPİFİZ</span> / HAREKETE GEÇİN</div><h2 id="closing-title">Kayıtların kurbanı olmayın.<br><span>Yöneten siz olun.</span></h2></div>
-        <a class="button button-primary" href="#services">Hizmet Seçin <span aria-hidden="true">↑</span></a>
-      </div>
-    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-main">
-      <a class="brand footer-brand" href="#top" aria-label="Atlas Pineal sayfa başına dön">
-        <span class="brand-mark" aria-hidden="true"><span>👁</span><i></i></span>
-        <span class="brand-copy"><span class="brand-name">ATLAS <b>PINEAL</b></span><span class="brand-caption">PINEAL OBSERVATORY // ÖZEL DİJİTAL İSTİHBARAT</span></span>
-      </a>
-      <p class="footer-principle">İZ · KÜL · SEDEF</p>
-      <a class="footer-top" href="#top">BAŞA DÖN ↑</a>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>ATLAS EPİFİZ // PINEAL OBSERVATORY</strong>
+        <p>Dijital Maruz Kalma Zekası, Hedef İstihbaratı ve İtibar Zırhı</p>
+      </div>
+      <div class="footer-links">
+        <span>İZ ✦ KÜL ✦ SEDEF</span>
+      </div>
     </div>
-    <div class="container footer-bottom"><span>© <span id="current-year">2026</span> Atlas Pineal · Pineal Epifiz Ekosistemi</span><span>Kanıta dayalı dijital maruziyet zekası, istihbarat ve itibar portalı.</span></div>
+    <div class="container footer-copy">
+      © <span id="current-year">2026</span> ATLAS PINEAL · Gücünü <a href="https://github.com/AppleCurse/pineal-epifiz" target="_blank" rel="noopener" style="color:var(--brass-bright);">Pineal Epifiz</a> çekirdeğinden alır.
+    </div>
   </footer>
 </body>
 </html>
